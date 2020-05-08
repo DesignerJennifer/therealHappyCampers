@@ -1,11 +1,19 @@
 // sequelize (lowercase) references our connection to the DB.
 module.exports = function (sequelize, DataTypes) {
-    var Guardian = sequelize.define('Guardian', 
+    var CamperInfo = sequelize.define('Guardian', 
     {
-        firstnam: DataTypes.STRING,
+        firstname: DataTypes.STRING,
         lastname: DataTypes.STRING,
         email: DataTypes.STRING,
-        medicalinfo: DataTypes.BOOLEAN,
+        phonenumber: INTEGER,
+        firstname: DataTypes.STRING,
+        lastname: DataTypes.STRING,
+        nickname: DataTypes.STRING,
+        birthday: DataTypes.INTEGER,
+        grade: DataTypes.INTEGER,
+        shirtsize: DataTypes.STRING,
+        allergies: DataTypes.STRING,
+        dieteryneeds: DataTypes.STRING,
     }
     )
     return Guardian;
