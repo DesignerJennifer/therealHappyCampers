@@ -1,29 +1,24 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Grid';
-
-import App from '../App';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        flexGrow: 1,
-    },
-    paper: {
-        padding: theme.spacing(2),
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
+        '& .MuiTextField-root': {
+            margin: theme.spacing(1),
+            width: '25ch',
+        },
     },
 }));
 
-export default function FormPropsTextFields() {
-    const classes = useStyles();
+function Registration(Props) {
 
     return (
         <Container maxWidth="sm">
-
             <form className={classes.root} noValidate autoComplete="off">
                 <div>
+                    {/* firstname */}
                     <TextField
                         required id="standard-required"
                         label="Required"
@@ -32,6 +27,7 @@ export default function FormPropsTextFields() {
                 </div>
 
                 <div>
+                    {/* lastname */}
                     <TextField
                         required id="standard-required"
                         label="Required"
@@ -40,6 +36,7 @@ export default function FormPropsTextFields() {
                 </div>
 
                 <div>
+                    {/* email */}
                     <TextField
                         required id="standard-required"
                         label="Required"
@@ -57,7 +54,7 @@ export default function FormPropsTextFields() {
                 </div>
 
                 <TextField
-                    id="standard-helperText"
+                    required id="standard-required standard-helperText"
                     label="Helper text"
                     defaultValue="Default Value"
                     helperText="Some important text"
