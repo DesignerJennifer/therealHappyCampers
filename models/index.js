@@ -2,6 +2,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
@@ -40,6 +41,8 @@ module.exports = db;
 =======
 =======
 >>>>>>> master
+=======
+>>>>>>> master
 var fs = require('fs');
 var path = require('path');
 var Sequelize = require('sequelize');
@@ -74,6 +77,10 @@ fs
     db.sequelize = Sequelize;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+    module.exports = db;
+>>>>>>> master
+=======
     module.exports = db;
 >>>>>>> master
 =======
