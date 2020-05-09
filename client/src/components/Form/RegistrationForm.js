@@ -1,68 +1,44 @@
-import React from 'react';
+import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        '& .MuiTextField-root': {
-            margin: theme.spacing(1),
-            width: '25ch',
-        },
-    },
-}));
+class FormContainer extends Component {
+    constructor(props) {
+        super(props);
 
-function Registration(Props) {
+        this.state = {
+            newUser: {
+                firstname: '',
+                lastname: '',
+                email: '',
+                phonenumber: 0,
+                camperfirstname: '',
+                camperlastname: '',
+                nickname: '',
+                birthday: 0,
+                grade: 0,
+                allergies: '',
+                dietaryneeds: ''
+            },
 
-    return (
-        <Container maxWidth="sm">
-            <form className={classes.root} noValidate autoComplete="off">
-                <div><h1>Parent/Guardian Information</h1></div>
+            shirtsizeOptions: ['Youth Small', 'Youth Medium', 'Youth Large', 'Youth XL', 'Adult Small', 'Adult Medium', 'Adult Large', 'Adult XL']
+        }
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    }
+    handleFormSubmit() {
+
+    }
+    render() {
+        return (
+            <form className={classes.root} noValidate autoComplete="off" onSubmit={this.handleFormSubmit}>
                 <div>
-                    {/* firstname */}
-                    <TextField
-                        required id="standard-required"
-                        label="Required"
-                        defaultValue="First Name"
-                    />
+                    <TextField required id="standard-required" label="Required"
+                        defaultValue="First Name"></TextField>
                 </div>
-
-                <div>
-                    {/* lastname */}
-                    <TextField
-                        required id="standard-required"
-                        label="Required"
-                        defaultValue="Last Name"
-                    />
-                </div>
-
-                <div>
-                    {/* email */}
-                    <TextField
-                        required id="standard-required"
-                        label="Required"
-                        defaultValue="Email"
-                        helperText="Please use an email you check frequently"
-                    />
-                </div>
-
-                <div>
-                    <TextField
-                        required id="standard-required"
-                        label="Required"
-                        defaultValue="Phone Number"
-                    />
-                </div>
-
-                <TextField
-                    required id="standard-required standard-helperText"
-                    label="Helper text"
-                    defaultValue="Default Value"
-                    helperText="Some important text"
-                />
-
 
             </form>
-        </Container>
-    );
+
+        )
+    }
 }
