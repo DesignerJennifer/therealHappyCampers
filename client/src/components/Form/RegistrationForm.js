@@ -17,6 +17,7 @@ function Registration(Props) {
     return (
         <Container maxWidth="sm">
             <form className={classes.root} noValidate autoComplete="off">
+                <div><h1>Parent/Guardian Information</h1></div>
                 <div>
                     {/* firstname */}
                     <TextField
