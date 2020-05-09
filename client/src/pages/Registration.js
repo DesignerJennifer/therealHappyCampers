@@ -3,9 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-
-
-import App from '../App';
+import DropDown from '../components/DropDown/DropDown';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -85,6 +83,7 @@ export default function FormPropsTextFields() {
                         defaultValue="Last Name"
                     />
                 </div>
+
                 <div>
                     {/* nickname */}
                     <TextField
@@ -121,7 +120,7 @@ export default function FormPropsTextFields() {
 
                 <div>
                     {/* Shirtsize */}
-                    <TextField
+                    <DropDown
                         id="standard-helperText"
                         label="Required"
                         defaultValue="Medium"
