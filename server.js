@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 // *****************************************************************************
 // Server.js - This file is the initial starting point for the Node/Express server.
 //
@@ -38,6 +39,8 @@ db.sequelize.sync({ force: true }).then(function() {
   });
 });
 =======
+=======
+>>>>>>> master
 const express = require("express");
 
 const sequelize = require("sequelize");
@@ -62,4 +65,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglis
 app.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
