@@ -1,6 +1,7 @@
 'use strict';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
@@ -37,6 +38,8 @@ db.Sequelize = Sequelize;
 
 module.exports = db;
 =======
+=======
+>>>>>>> master
 var fs = require('fs');
 var path = require('path');
 var Sequelize = require('sequelize');
@@ -70,5 +73,9 @@ fs
     db.sequelize = sequelize;
     db.sequelize = Sequelize;
 
+<<<<<<< HEAD
+    module.exports = db;
+>>>>>>> master
+=======
     module.exports = db;
 >>>>>>> master
