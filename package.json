@@ -14,6 +14,10 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    "mdbreact": "^4.26.0",
+>>>>>>> master
 =======
     "mdbreact": "^4.26.0",
 >>>>>>> master
@@ -26,9 +30,13 @@
     "react-dom": "^16.13.1",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "react-router": "^5.1.2",
     "react-scripts": "3.4.1"
+>>>>>>> master
+=======
+    "react-router": "^5.1.2",
 >>>>>>> master
 =======
     "react-router": "^5.1.2",
