@@ -6,7 +6,7 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
-
+const routes = require("./routes");
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -25,6 +25,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // // Routes
+app.use(routes);
 // // =============================================================
 // require("./routes/html-routes.js")(app);
 // require("./routes/author-api-routes.js")(app);
