@@ -2,6 +2,20 @@ var bcrypt = require("bcryptjs");
 
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
+        firstName: {
+            type: DataTypes.STRING,
+            validate: {
+              isAlpha: true
+            }
+          },
+      
+          lastName: {
+            type: DataTypes.STRING,
+            validate: {
+              isAlpha: true
+            }
+        },
+
         email: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -17,7 +31,51 @@ module.exports = function(sequelize, DataTypes) {
         saved: {
             type: DataTypes.TEXT,
             allowNull: true
-        }
+        },
+
+        phonenumber: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+
+        camperfirstname:  {
+        type: DataTypes.STRING,
+        allowNull: false,
+        },
+        camperlastname: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            },
+
+        nickname: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            },
+        
+        shirtsize: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            },
+
+        allergies: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            },
+        dieteryneeds: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            },
+        birthday: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+
+        grade: { 
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+
+
     });
 
     User.prototype.validPassword = function(password) {
