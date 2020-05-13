@@ -1,0 +1,24 @@
+{
+  "name": "happy",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "if-env": "^1.0.4",
+    "sequelize": "^5.21.7"
+  },
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "author": "",
+  "license": "ISC"
+}

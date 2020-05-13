@@ -8,9 +8,24 @@ import Container from '@material-ui/core/Container';
 
 export default function SwitchesGroup() {
   const [state, setState] = React.useState({
-    gilad: true,
-    jason: false,
-    antoine: true,
+    Bedding: true,
+    Shorts: false,
+    Tshirts: true,
+    Sneakers: true,
+    Jacket: true,
+    Swimsuit: true,
+    Towel: true,
+    Sunscreen: true,
+    Hat: true,
+    Toothbrush: true,
+    Shower: true,
+    Bug: true,
+    Water: true,
+    Rainwear: true,
+    Flashlight: true,
+    Hairbrush: true,
+    Socks: true,
+    Campday: true,
   });
 
   const handleChange = event => {
@@ -20,59 +35,99 @@ export default function SwitchesGroup() {
   return (
     <Container maxWidth="lg">
       <Grid item xs={12}>
-        <Grid container spacing={4}>
+        <Grid container spacing={2}>
           <Grid item xs={6}>
             <FormControl component="fieldset">
               <FormGroup>
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={state.gilad}
+                      checked={state.Bedding}
                       onChange={handleChange}
-                      name="gilad"
+                      name="Bedding"
                     />
                   }
-                  label="Gilad Gray"
+                  label="Bedding & Pillows"
                 />
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={state.jason}
+                      checked={state.Tshirts}
                       onChange={handleChange}
-                      name="jason"
+                      name="Tshirts"
                     />
                   }
-                  label="Jason Killian"
+                  label="T-shirts"
                 />
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={state.antoine}
+                      checked={state.Jacket}
                       onChange={handleChange}
-                      name="antoine"
+                      name="Jacket"
                     />
                   }
-                  label="Antoine Llorca"
+                  label="Light Jacket"
                 />
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={state.jason}
+                      checked={state.Shorts}
                       onChange={handleChange}
-                      name="jason"
+                      name="Shorts"
                     />
                   }
-                  label="Jason Killian"
+                  label="Shorts"
                 />
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={state.jason}
+                      checked={state.Swimsuit}
                       onChange={handleChange}
-                      name="jason"
+                      name="Swimsuit"
                     />
                   }
-                  label="Jason Killian"
+                  label="Swimsuit"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.Sneakers}
+                      onChange={handleChange}
+                      name="Sneakers"
+                    />
+                  }
+                  label="Sneakers"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.Hat}
+                      onChange={handleChange}
+                      name="Hat"
+                    />
+                  }
+                  label="Hat/Sunglasses"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.Socks}
+                      onChange={handleChange}
+                      name="Socks"
+                    />
+                  }
+                  label="Socks"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.Rainwear}
+                      onChange={handleChange}
+                      name="Rainwear"
+                    />
+                  }
+                  label="Rain wear"
                 />
               </FormGroup>
             </FormControl>
@@ -83,52 +138,92 @@ export default function SwitchesGroup() {
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={state.gilad}
+                      checked={state.sunscreen}
                       onChange={handleChange}
-                      name="gilad"
+                      name="sunscreen"
                     />
                   }
-                  label="Gilad Gray"
+                  label="Sunscreen"
                 />
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={state.jason}
+                      checked={state.Towel}
                       onChange={handleChange}
-                      name="jason"
+                      name="Towel"
                     />
                   }
-                  label="Jason Killian"
+                  label="Beach Towel / Shower Towel"
                 />
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={state.jason}
+                      checked={state.Bug}
                       onChange={handleChange}
-                      name="jason"
+                      name="Bug"
                     />
                   }
-                  label="Jason Killian"
+                  label="Bug Spray"
                 />
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={state.jason}
+                      checked={state.Shower}
                       onChange={handleChange}
-                      name="jason"
+                      name="Shower"
                     />
                   }
-                  label="Jason Killian"
+                  label="Shower Products"
                 />
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={state.antoine}
+                      checked={state.Toothbrush}
                       onChange={handleChange}
-                      name="antoine"
+                      name="Toothbrush"
                     />
                   }
-                  label="Antoine Llorca"
+                  label="Toothbrush/Toothpaste"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.Hairbrush}
+                      onChange={handleChange}
+                      name="Hairbrush"
+                    />
+                  }
+                  label="Hairbrush"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.Water}
+                      onChange={handleChange}
+                      name="Water"
+                    />
+                  }
+                  label="Water-bottle"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.Flashlight}
+                      onChange={handleChange}
+                      name="Flashlight"
+                    />
+                  }
+                  label="Flashlight"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.Campday}
+                      onChange={handleChange}
+                      name="Campday"
+                    />
+                  }
+                  label="Camp day theme attire"
                 />
               </FormGroup>
             </FormControl>

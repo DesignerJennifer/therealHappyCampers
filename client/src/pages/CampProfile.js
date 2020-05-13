@@ -7,7 +7,6 @@ import download from '../download.png';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 
-
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
