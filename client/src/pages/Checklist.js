@@ -20,8 +20,8 @@ export default function SwitchesGroup() {
   return (
     <Container maxWidth="lg">
       <Grid item xs={12}>
-        <Grid container spacing={10}>
-          <Grid item xs={4}>
+        <Grid container spacing={4}>
+          <Grid item xs={6}>
             <FormControl component="fieldset">
               <FormGroup>
                 <FormControlLabel
@@ -77,63 +77,7 @@ export default function SwitchesGroup() {
               </FormGroup>
             </FormControl>
           </Grid>
-          <Grid item xs={4}>
-            <FormControl component="fieldset">
-              <FormGroup>
-                <FormControlLabel
-                  control={
-                    <Switch
-                      checked={state.gilad}
-                      onChange={handleChange}
-                      name="gilad"
-                    />
-                  }
-                  label="Gilad Gray"
-                />
-                <FormControlLabel
-                  control={
-                    <Switch
-                      checked={state.jason}
-                      onChange={handleChange}
-                      name="jason"
-                    />
-                  }
-                  label="Jason Killian"
-                />
-                <FormControlLabel
-                  control={
-                    <Switch
-                      checked={state.jason}
-                      onChange={handleChange}
-                      name="jason"
-                    />
-                  }
-                  label="Jason Killian"
-                />
-                <FormControlLabel
-                  control={
-                    <Switch
-                      checked={state.jason}
-                      onChange={handleChange}
-                      name="jason"
-                    />
-                  }
-                  label="Jason Killian"
-                />
-                <FormControlLabel
-                  control={
-                    <Switch
-                      checked={state.antoine}
-                      onChange={handleChange}
-                      name="antoine"
-                    />
-                  }
-                  label="Antoine Llorca"
-                />
-              </FormGroup>
-            </FormControl>
-          </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={6}>
             <FormControl component="fieldset">
               <FormGroup>
                 <FormControlLabel
