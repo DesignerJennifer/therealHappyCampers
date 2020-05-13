@@ -1,69 +1,196 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import ListItemText from '@material-ui/core/ListItemText';
-import Checkbox from '@material-ui/core/Checkbox';
-import IconButton from '@material-ui/core/IconButton';
-import CommentIcon from '@material-ui/icons/Comment';
+import FormControl from '@material-ui/core/FormControl';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
-    maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
-  },
-}));
+export default function SwitchesGroup() {
+  const [state, setState] = React.useState({
+    gilad: true,
+    jason: false,
+    antoine: true,
+  });
 
-export default function CheckboxList() {
-  const classes = useStyles();
-  const [checked, setChecked] = React.useState([0]);
-
-  const handleToggle = value => () => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
-
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
-
-    setChecked(newChecked);
+  const handleChange = event => {
+    setState({ ...state, [event.target.name]: event.target.checked });
   };
 
   return (
-    <List className={classes.root}>
-      {[0, 1, 2, 3].map(value => {
-        const labelId = `checkbox-list-label-${value}`;
-
-        return (
-          <ListItem
-            key={value}
-            role={undefined}
-            dense
-            button
-            onClick={handleToggle(value)}>
-            <ListItemIcon>
-              <Checkbox
-                edge="start"
-                checked={checked.indexOf(value) !== -1}
-                tabIndex={-1}
-                disableRipple
-                inputProps={{ 'aria-labelledby': labelId }}
-              />
-            </ListItemIcon>
-            <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
-            <ListItemSecondaryAction>
-              <IconButton edge="end" aria-label="comments">
-                <CommentIcon />
-              </IconButton>
-            </ListItemSecondaryAction>
-          </ListItem>
-        );
-      })}
-    </List>
+    <Container maxWidth="lg">
+      <Grid item xs={12}>
+        <Grid container spacing={10}>
+          <Grid item xs={4}>
+            <FormControl component="fieldset">
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.gilad}
+                      onChange={handleChange}
+                      name="gilad"
+                    />
+                  }
+                  label="Gilad Gray"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.jason}
+                      onChange={handleChange}
+                      name="jason"
+                    />
+                  }
+                  label="Jason Killian"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.antoine}
+                      onChange={handleChange}
+                      name="antoine"
+                    />
+                  }
+                  label="Antoine Llorca"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.jason}
+                      onChange={handleChange}
+                      name="jason"
+                    />
+                  }
+                  label="Jason Killian"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.jason}
+                      onChange={handleChange}
+                      name="jason"
+                    />
+                  }
+                  label="Jason Killian"
+                />
+              </FormGroup>
+            </FormControl>
+          </Grid>
+          <Grid item xs={4}>
+            <FormControl component="fieldset">
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.gilad}
+                      onChange={handleChange}
+                      name="gilad"
+                    />
+                  }
+                  label="Gilad Gray"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.jason}
+                      onChange={handleChange}
+                      name="jason"
+                    />
+                  }
+                  label="Jason Killian"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.jason}
+                      onChange={handleChange}
+                      name="jason"
+                    />
+                  }
+                  label="Jason Killian"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.jason}
+                      onChange={handleChange}
+                      name="jason"
+                    />
+                  }
+                  label="Jason Killian"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.antoine}
+                      onChange={handleChange}
+                      name="antoine"
+                    />
+                  }
+                  label="Antoine Llorca"
+                />
+              </FormGroup>
+            </FormControl>
+          </Grid>
+          <Grid item xs={4}>
+            <FormControl component="fieldset">
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.gilad}
+                      onChange={handleChange}
+                      name="gilad"
+                    />
+                  }
+                  label="Gilad Gray"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.jason}
+                      onChange={handleChange}
+                      name="jason"
+                    />
+                  }
+                  label="Jason Killian"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.jason}
+                      onChange={handleChange}
+                      name="jason"
+                    />
+                  }
+                  label="Jason Killian"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.jason}
+                      onChange={handleChange}
+                      name="jason"
+                    />
+                  }
+                  label="Jason Killian"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.antoine}
+                      onChange={handleChange}
+                      name="antoine"
+                    />
+                  }
+                  label="Antoine Llorca"
+                />
+              </FormGroup>
+            </FormControl>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
