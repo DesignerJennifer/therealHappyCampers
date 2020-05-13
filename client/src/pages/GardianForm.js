@@ -10,7 +10,7 @@ import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
-import AddressForm from './AddressForm';
+// import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
 
@@ -66,18 +66,18 @@ const useStyles = makeStyles((theme) => ({
 
 const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
-function getStepContent(step) {
-    switch (step) {
-        case 0:
-            return <AddressForm />;
-        case 1:
-            return <PaymentForm />;
-        case 2:
-            return <Review />;
-        default:
-            throw new Error('Unknown step');
-    }
-}
+// function getStepContent(step) {
+//     switch (step) {
+//         case 0:
+//         // return <AddressForm />;
+//         case 1:
+//             return <PaymentForm />;
+//         case 2:
+//             return <Review />;
+//         default:
+//             throw new Error('Unknown step');
+//     }
+// }
 
 export default function Checkout() {
     const classes = useStyles();

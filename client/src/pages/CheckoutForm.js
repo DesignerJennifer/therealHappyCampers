@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
+const steps = ['Your Information', 'Camper Information', 'Review Your Information'];
 
 function getStepContent(step) {
     switch (step) {
@@ -97,15 +97,16 @@ export default function Checkout() {
             <AppBar position="absolute" color="default" className={classes.appBar}>
                 <Toolbar>
                     <Typography variant="h6" color="inherit" noWrap>
-                        Company name
+                        Camp Quest Kansas City
           </Typography>
                 </Toolbar>
             </AppBar>
             <main className={classes.layout}>
                 <Paper className={classes.paper}>
                     <Typography component="h1" variant="h4" align="center">
-                        Checkout
+                        Create Account
           </Typography>
+                    {/* Registration form - Gaurdian Registration */}
                     <Stepper activeStep={activeStep} className={classes.stepper}>
                         {steps.map((label) => (
                             <Step key={label}>
@@ -113,6 +114,7 @@ export default function Checkout() {
                             </Step>
                         ))}
                     </Stepper>
+
                     <React.Fragment>
                         {activeStep === steps.length ? (
                             <React.Fragment>
@@ -126,7 +128,7 @@ export default function Checkout() {
                             </React.Fragment>
                         ) : (
                                 <React.Fragment>
-                                    {/* {getStepContent(activeStep)} */}
+                                    {getStepContent(activeStep)}
                                     <div className={classes.buttons}>
                                         {activeStep !== 0 && (
                                             <Button onClick={handleBack} className={classes.button}>
