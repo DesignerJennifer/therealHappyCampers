@@ -5,6 +5,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
+import './Checklist.css';
 
 export default function SwitchesGroup() {
   const [state, setState] = React.useState({
