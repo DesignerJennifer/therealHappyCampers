@@ -10,7 +10,8 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
+import CQKC_Logo_wBorder from "../images/CQKC_Logo_wBorder.png"
+import "../pages/style.css"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -41,8 +42,10 @@ export default function SignIn() {
             <CssBaseline />
             <div className={classes.paper}>
                 <div>
+                    <img className="logo_wBorder" src={CQKC_Logo_wBorder} alt="CQKC Logo" />
                 </div>
                 <Typography component="h1" variant="h5">
+
                     Sign in
         </Typography>
                 <form className={classes.form} noValidate>
