@@ -11,21 +11,10 @@ import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import AddressForm from './AddressForm';
-import PaymentForm from './PaymentForm';
+import PaymentForm from '../pages/PaymentForm';
 import Review from './Review';
+import Copyright from '../components/Copyright'
 
-function Copyright() {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="https://material-ui.com/">
-                Your Website
-      </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -106,6 +95,7 @@ export default function Checkout() {
                     <Typography component="h1" variant="h4" align="center">
                         Create Account
           </Typography>
+
                     {/* Registration form - Gaurdian Registration */}
                     <Stepper activeStep={activeStep} className={classes.stepper}>
                         {steps.map((label) => (
