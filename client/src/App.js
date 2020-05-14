@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
-import Dashboard from './pages/dashboard';
+// import Dashboard from './pages/dashboard';
+import Landing from './pages/main';
 
 function App() {
-  return <Dashboard />;
+  return <Landing />;
 }
 
 // import React from "react";
