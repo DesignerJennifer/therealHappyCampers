@@ -2,13 +2,29 @@
   "name": "happy",
   "version": "0.1.0",
   "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
   "dependencies": {
+<<<<<<< Updated upstream
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "authentication": "0.0.4",
+=======
+>>>>>>> Stashed changes
     "bcrypt": "^4.0.1",
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
+<<<<<<< Updated upstream
     "fs": "0.0.1-security",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -38,5 +54,14 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
     "sequelize": "^5.21.7"
+=======
+    "if-env": "^1.0.4",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.7"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.2",
+    "nodemon": "^1.18.7"
+>>>>>>> Stashed changes
   }
 }

@@ -15,6 +15,7 @@ if (config.use_env_variable) {
 }
 
 fs
+<<<<<<< Updated upstream
   .readdirSync(__dirname)
   .filter(file => {
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
@@ -36,3 +37,24 @@ db.Sequelize = Sequelize;
 module.exports = db;
 
 
+=======
+    .readdirSync(__dirname)
+    .filter(function(file){
+        return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
+    })
+    .forEach(function(file) {
+        var model = sequelize['import'](path.join(__dirname, file));
+        db[model.name] = model;
+    });
+
+    Object.keys(db).forEach(function(modelName) {
+        if (db[modelName].associate) {
+            db[modelName].associate(db);
+        }
+    });
+
+    db.sequelize = sequelize;
+    db.Sequelize = Sequelize;
+
+    module.exports = db;
+>>>>>>> Stashed changes
