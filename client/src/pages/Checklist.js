@@ -31,6 +31,7 @@ export default function SwitchesGroup() {
 
   const handleChange = event => {
     setState({ ...state, [event.target.name]: event.target.checked });
+    localStorage.setItem(event.target.name, event.target.checked);
   };
 
   return (
