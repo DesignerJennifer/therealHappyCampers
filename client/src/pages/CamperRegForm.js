@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import registration from "../Utils/registration";
 import DropDown from "../components/DropDown/DropDown";
 
-export default function PaymentForm() {
+export default function CamperRegForm() {
     return (
         <React.Fragment>
             <Typography variant="h6" gutterBottom>

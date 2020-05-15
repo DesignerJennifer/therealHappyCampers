@@ -8,10 +8,9 @@ import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
-import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
-import AddressForm from './AddressForm';
-import PaymentForm from '../pages/PaymentForm';
+import SignUpForm from './SignUpForm';
+import CamperRegForm from './CamperRegForm';
 import Review from './Review';
 import Copyright from '../components/Copyright'
 
@@ -58,9 +57,9 @@ const steps = ['Your Information', 'Camper Information', 'Review Your Informatio
 function getStepContent(step) {
     switch (step) {
         case 0:
-            return <AddressForm />;
+            return <SignUpForm />;
         case 1:
-            return <PaymentForm />;
+            return <CamperRegForm />;
         case 2:
             return <Review />;
         default:

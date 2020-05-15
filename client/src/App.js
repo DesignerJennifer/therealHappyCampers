@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
-import AddressForm from "./pages/AddressForm";
-import PaymentForm from "./pages/PaymentForm";
-import CheckoutForm from "./pages/CheckoutForm";
+import SignUpForm from "./pages/SignUpForm";
+import CamperRegForm from "./pages/CamperRegForm";
+import CreateAccount from "./pages/CreateAccount";
 
 
 
@@ -16,9 +16,9 @@ function App() {
 
         <Route exact path="/" component={Login} />
         <Route exact path="/registration" component={Registration} />
-        <Route exact path="/AddressForm" component={AddressForm} />
-        <Route exact path="/PaymentForm" component={PaymentForm} />
-        <Route exact path="/CheckoutForm" component={CheckoutForm} />
+        <Route exact path="/SignUpForm" component={SignUpForm} />
+        <Route exact path="/CamperRegForm" component={CamperRegForm} />
+        <Route exact path="/CreateAccount" component={CreateAccount} />
 
 
 

@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import registration from "../Utils/registration"
 
 
-export default function AddressForm() {
+export default function SignUpForm() {
     return (
         <React.Fragment>
             <Typography variant="h6" gutterBottom>
