@@ -1,150 +1,55 @@
-var bcrypt = require("bcryptjs");
-const Sequelize = require('sequelize')
-const db = require('../config/connection')
-
-<<<<<<< Updated upstream
-module.exports = function(sequelize, DataTypes) {
-    var User = sequelize.define("User", {
-        firstName: {
-            type: DataTypes.STRING,
-            validate: {
-              isAlpha: true
-            }
-          },
-      
-          lastName: {
-            type: DataTypes.STRING,
-            validate: {
-              isAlpha: true
-            }
+module.exports = function(sequelize, Sequelize) {
+ 
+    var User = sequelize.define('user', {
+ 
+        id: {
+            autoIncrement: true,
+            primaryKey: true,
+            type: Sequelize.INTEGER
         },
-
-=======
-// sequelize (lowercase) references our connection to the DB.
-module.exports = function (sequelize, DataTypes) {
-    var userInfo = sequelize.define('userinfo', 
-    {
+ 
         firstname: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
+            notEmpty: true
         },
+ 
         lastname: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
+            notEmpty: true
         },
->>>>>>> Stashed changes
+ 
+        username: {
+            type: Sequelize.TEXT
+        },
+ 
+        about: {
+            type: Sequelize.TEXT
+        },
+ 
         email: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
+            validate: {
+                isEmail: true
+            }
         },
-        phonenumber:{
-            type: DataTypes.INTEGER
-        },
-
-        camperfirstname: {
-            type: DataTypes.STRING,
-        },
-        camperlastname: {
-            type: DataTypes.STRING,
-        },
-        nickname: {
-            type: DataTypes.STRING,
-        },
-<<<<<<< Updated upstream
-        saved: {
-            type: DataTypes.TEXT,
-            allowNull: true
-        },
-
-        phonenumber: {
-            type: DataTypes.INTEGER,
+ 
+        password: {
+            type: Sequelize.STRING,
             allowNull: false
         },
-
-        camperfirstname:  {
-        type: DataTypes.STRING,
-        allowNull: false,
+ 
+        last_login: {
+            type: Sequelize.DATE
         },
-        camperlastname: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            },
-
-        nickname: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            },
-        
-        shirtsize: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            },
-
-        allergies: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            },
-        dieteryneeds: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            },
-        birthday: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-
-        grade: { 
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-
-
+ 
+        status: {
+            type: Sequelize.ENUM('active', 'inactive'),
+            defaultValue: 'active'
+        }
+ 
+ 
     });
-=======
-        birthday: {
-           type: DataTypes.INTEGER
-        },
-        grade: {
-            type: DataTypes.INTEGER
-        },
-        shirtsize: {
-            type: DataTypes.STRING,
-        },
-        allergies: {
-            type: DataTypes.STRING,
-        },
-        dieteryneeds: {
-            type: DataTypes.STRING,
-        },
-    }
-    )
-    return userInfo;
+ 
+    return User;
+ 
 }
-
-// module.exports = function(sequelize, DataTypes) {
-//     var User = sequelize.define("User", {
-//         email: {
-//             type: DataTypes.STRING,
-//             allowNull: false,
-//             unique: true,
-//             validate: {
-//                 isEmail: true
-//             }
-//         },
-//         password: {
-//             type: DataTypes.STRING,
-//             allowNull: false
-//         },
-//         saved: {
-//             type: DataTypes.TEXT,
-//             allowNull: true
-//         }
-//     });
->>>>>>> Stashed changes
-
-//     User.prototype.validPassword = function(password) {
-//         return bcrypt.compareSync(password, this.password);
-//     };
-
-//     User.addHook("beforeCreate", function(user) {
-//         user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
-//     });
-//     return User;
-// };

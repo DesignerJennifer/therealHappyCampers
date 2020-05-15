@@ -1,31 +1,31 @@
 import React from 'react';
 import './App.css';
-import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/dashboard';
 
 function App() {
   return <Dashboard />;
 
 
-
-  
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Login from "./pages/Login";
-import Registration from "./pages/Registration";
-
-
-
-function App() {
-  return (
-    <Router>
-      <div>
-
-        <Route exact path="/" component={Login} />
-        <Route exact path="/registration" component={Registration} />
-
-      </div>
-    </Router>
-  );
 }
+  
+// import React from "react";
+// import { BrowserRouter as Router, Route } from "react-router-dom";
+// import Login from "./pages/Login";
+// import Registration from "./pages/Registration";
 
-export default App;
+
+
+// function App() {
+//   return (
+//     <Router>
+//       <div>
+
+//         <Route exact path="/" component={Login} />
+//         <Route exact path="/registration" component={Registration} />
+
+//       </div>
+//     </Router>
+//   );
+// }
+
+export default App
