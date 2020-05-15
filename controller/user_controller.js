@@ -1,22 +1,43 @@
-var express = require("express");
-var router = express.Router();
+const db = require("../models");
 
-var isAuthenticated = require("../config/middleware/isAuthenticated");
+// Defining methods for the booksController
+module.exports = {
+  findAll: function(req, res) {
+    db.User
+      .find(req.query)
+      .sort({ date: -1 })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  findById: function(req, res) {
+    db.User
+      .findById(req.params.id)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  create: function(req, res) {
+    db.User
+      .create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  update: function(req, res) {
+    db.User
+      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  remove: function(req, res) {
+    db.User
+      .findById({ _id: req.params.id })
+      .then(dbModel => dbModel.remove())
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  }
+};
 
-router.get("/", function(req, res) {
-    res.render("index")
-});
-
-router.get("/login", function(req, res) {
-    if (req.user) {
-        res.redirect("/members", isAuthenticated, function(req, res) {
-            res.render("members", {
-                userId: req.user.id
-            });
-        });
-
-
-    }
-});
-
-module.exports = router;
+// module.exports = {
+//     findAll: function(req, res) {
+//         res.send("HEY UP YOURS BUDDY!")
+//     }
+// }

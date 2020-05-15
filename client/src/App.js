@@ -1,16 +1,19 @@
 import React from 'react';
 import './App.css';
-// import Dashboard from './pages/dashboard';
-import Landing from './pages/main';
+import Dashboard from './pages/dashboard';
 
 function App() {
-  return <Landing />;
+  return <Dashboard />;
+
+
 }
+  
 
 // import React from "react";
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 // import Login from "./pages/Login";
 // import Registration from "./pages/Registration";
+
 
 // function App() {
 //   return (
@@ -25,4 +28,4 @@ function App() {
 //   );
 // }
 
-export default App;
+export default App
