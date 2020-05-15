@@ -87,7 +87,7 @@ export default function SignIn() {
                             <Link href="#" variant="body2">Forgot password?</Link>
                         </Grid> */}
                         <Grid item>
-                            <Link href="CheckoutForm" variant="body2">"Don't have an account? Sign Up"</Link>
+                            <Link href="CheckoutForm" variant="body2">Don't have an account? Sign Up</Link>
 
                         </Grid>
                     </Grid>
