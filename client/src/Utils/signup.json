@@ -6,13 +6,5 @@
     "address": "100 Somewhere Street ",
     "city": "Someplace",
     "state": "MO",
-    "zip": "90987",
-    "camperFirstName": "First",
-    "camperLastName": "Last",
-    "nickname": "Nickname",
-    "birthday": "00/00/00",
-    "grade": "0",
-    "shritsize": " ",
-    "allergies": "Known Allergies",
-    "dieteryneeds": "Special diet needs"
+    "zip": "90987"
 }

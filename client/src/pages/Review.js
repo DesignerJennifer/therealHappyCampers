@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Grid from '@material-ui/core/Grid';
-import registration from '../Utils/registration.json';
+import registration from '../Utils/registration';
 
 // const products = [
 //     { name: 'Product 1', desc: 'A nice thing', price: '$9.99' },

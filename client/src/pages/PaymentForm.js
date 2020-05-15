@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
-import registration from "../Utils/registration.json";
+import registration from "../Utils/registration";
 import DropDown from "../components/DropDown/DropDown";
 
 export default function PaymentForm() {
