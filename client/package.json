@@ -13,10 +13,6 @@
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
-
-    "react-scripts": "3.4.1",
-    "typeface-roboto": "0.0.75",
-
     "react-scripts": "3.4.1",
     "typeface-roboto": "0.0.75",
     "react-router": "^5.1.2",
