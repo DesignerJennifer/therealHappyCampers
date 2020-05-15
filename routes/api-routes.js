@@ -1,33 +1,18 @@
 const router = require("express").Router();
-const userController = require("../../controller/user_controller");
+const userController = require('../controller/user_controller');
+var authController = require('../controller/authcontroller.js');
 
 
-// login page
-router.get('/login', (req, res) => res.send('Login'));
+module.exports = function(app) {
+ 
+  app.get('/', authController.signup);
 
-// Register page
-router.get('/register', (req, res) => res.send('Register'));
-
-
-// Matches with "/api/users"
-router.route("/")
-  .get(userController.findAll)
-  .post(userController.create);
-
-// Matches with "/api/books/:id"
-router
-  .route("/:id")
-  .get(userController.findById)
-  .put(userController.update)
-  .delete(userController.remove);
+}
 
 // Matches with "/api/books/:id"
 // router
 //   .route("/:id")
 //   .get(userController.findById)
-
-module.exports = router;
-
 
 
 
