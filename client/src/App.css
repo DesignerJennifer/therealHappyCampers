@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.mainNav {
+  background-color: #e57200;
+}
+
+.titles {
+  color: #002f6c;
+}
+
+.formFile {
+  background-color: #002f6c !important;
+  color: white !important;
+}
+
+.listText {
+  white-space: pre-wrap;
+}
