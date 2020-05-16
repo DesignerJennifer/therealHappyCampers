@@ -6,10 +6,10 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Title from './Title';
+import Title from '../../DashboardTitles/Title';
 import Button from '@material-ui/core/Button';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
-import '../App.css';
+import '../../App.css';
 
 function createData(id, form, dueDate, status, file) {
   return { id, form, dueDate, status, file };

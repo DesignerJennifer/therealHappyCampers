@@ -1,9 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Title from './Title';
+import Title from '../../DashboardTitles/Title';
 import Figure from 'react-bootstrap/Figure';
-import download from '../download.png';
+import download from '../../images/download.png';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 

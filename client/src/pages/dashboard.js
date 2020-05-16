@@ -15,13 +15,16 @@ import Paper from '@material-ui/core/Paper';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import { mainListItems, secondaryListItems } from './Schedule';
-import Checklist from './Checklist';
-import FullColorLogo from '../FullColorLogo.png';
+import {
+  mainListItems,
+  secondaryListItems,
+} from '../components/Schedule/Schedule';
+import Checklist from '../components/Checklist/Checklist';
+import FullColorLogo from '../images/FullColorLogo.png';
 import Figure from 'react-bootstrap/Figure';
-import CampProfile from './CampProfile';
-import Forms from './Forms';
-import Title from './Title';
+import CampProfile from '../components/CampProfile/CampProfile';
+import Forms from '../components/DashboardTable/Forms';
+import Title from '../DashboardTitles/Title';
 
 const drawerWidth = 240;
 
