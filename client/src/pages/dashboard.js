@@ -15,12 +15,16 @@ import Paper from '@material-ui/core/Paper';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import { mainListItems, secondaryListItems } from './Schedule';
-import Checklist from './Checklist';
-import FullColorLogo from '../FullColorLogo.png';
+import {
+  mainListItems,
+  secondaryListItems,
+} from '../components/Schedule/Schedule';
+import Checklist from '../components/Checklist/Checklist';
+import FullColorLogo from '../images/FullColorLogo.png';
 import Figure from 'react-bootstrap/Figure';
-import CampProfile from './CampProfile';
-import Forms from './Forms';
+import CampProfile from '../components/CampProfile/CampProfile';
+import Forms from '../components/DashboardTable/Forms';
+import Title from '../DashboardTitles/Title';
 
 const drawerWidth = 240;
 
@@ -174,14 +178,15 @@ export default function Dashboard() {
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
             {/* camper profile */}
-            <Grid item xs={12} md={5} lg={5}>
+            <Grid item xs={12} md={6} lg={6}>
               <Paper className={classes.paper}>
                 <CampProfile />
               </Paper>
             </Grid>
             {/* checklist */}
-            <Grid item xs={7}>
+            <Grid item xs={12} md={6} lg={6}>
               <Paper className={classes.paper}>
+                <Title>Camper Suggested Packing List</Title>
                 <Checklist />
               </Paper>
             </Grid>
