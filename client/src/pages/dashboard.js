@@ -24,7 +24,7 @@ import FullColorLogo from '../images/FullColorLogo.png';
 import Figure from 'react-bootstrap/Figure';
 import CampProfile from '../components/CampProfile/CampProfile';
 import Forms from '../components/DashboardTable/Forms';
-import Title from '../DashboardTitles/Title';
+import Title from '../components/DashboardTitles/Title';
 
 const drawerWidth = 240;
 
