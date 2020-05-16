@@ -2,11 +2,20 @@ const router = require("express").Router();
 const userController = require('../controller/user_controller');
 var authController = require('../controller/authcontroller.js');
 
+// get - to get a resource
+// post  - to create a resource
+// update - to update an existing resource
+// delete - to delete a resource
 
-module.exports = function(app) {
- 
-  app.get('/', authController.signup);
+module.exports = function() {
+  router.route('/health')
+    .get((req, res) => {
+      res.json({status: 'ok'})
+    })
 
+  // app.get('/api/signup', authController.signup);
+
+  return router
 }
 
 // Matches with "/api/books/:id"
@@ -24,7 +33,7 @@ module.exports = function(app) {
 // // =============================================================
 // module.exports = function(app) {
 
-//   // Get all users
+  // Get all users
 //   app.get("/api/all", function(req, res) {
 //     // Finding all Chirps, and then returning them to the user as JSON.
 //     User.findAll({})
@@ -35,17 +44,17 @@ module.exports = function(app) {
 
 //   });
 
-// // // Get route for returning posts of a specific user
-// // app.get("/api/campers/fullname/:fullname", function(req, res) {
-// //   User.Userinfo.findAll({
-// //     where: {
-// //       firstname: req.params.firstname
-// //     }
-// //   })
-// //     .then(function(dbPost) {
-// //       res.json(dbPost);
-// //     });
-// // });
+// // Get route for returning posts of a specific user
+// app.get("/api/campers/fullname/:fullname", function(req, res) {
+//   User.Userinfo.findAll({
+//     where: {
+//       firstname: req.params.firstname
+//     }
+//   })
+//     .then(function(dbPost) {
+//       res.json(dbPost);
+//     });
+// });
 
 
 //  // Get route for retrieving a single user
@@ -59,8 +68,6 @@ module.exports = function(app) {
 //       res.json(dbUser);
 //     });
 // });
-
-
 
 //   // Add a user
 //   app.post("/api/new", function(req, res) {
@@ -102,5 +109,3 @@ module.exports = function(app) {
 //           res.json(dbPost);
 //         });
 //     });
-
-// };

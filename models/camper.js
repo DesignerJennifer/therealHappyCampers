@@ -6,18 +6,6 @@ const db = require('../config/connection')
 module.exports = function (sequelize, DataTypes) {
     var campers = sequelize.define('campers', 
     {
-        firstname: {
-            type: DataTypes.STRING,
-        },
-        lastname: {
-            type: DataTypes.STRING,
-        },
-        email: {
-            type: DataTypes.STRING,
-        },
-        phonenumber:{
-            type: DataTypes.INTEGER
-        },
 
         camperfirstname: {
             type: DataTypes.STRING,
@@ -29,19 +17,19 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
         },
         birthday: {
-           type: DataTypes.INTEGER
+           type: DataTypes.STRING,
         },
         grade: {
-            type: DataTypes.INTEGER
+            type: DataTypes.STRING,
         },
         shirtsize: {
             type: DataTypes.STRING,
         },
         allergies: {
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
         },
         dieteryneeds: {
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
         },
     }
     )
