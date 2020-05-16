@@ -12,11 +12,11 @@ function App() {
   return (
     <Router>
       <div>
-        <Route exact path="/" component={Login} />
+        {/* <Route exact path="/" component={Login} />
         <Route exact path="/registration" component={Registration} />
         <Route exact path="/SignUpForm" component={SignUpForm} />
         <Route exact path="/CamperRegForm" component={CamperRegForm} />
-        <Route exact path="/CreateAccount" component={CreateAccount} />
+        <Route exact path="/CreateAccount" component={CreateAccount} /> */}
         <Route exact path="/dashboard" component={Dashboard} />
       </div>
     </Router>
