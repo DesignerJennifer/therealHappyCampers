@@ -5,8 +5,8 @@ const routes = require("./routes/api-routes");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var passport   = require('passport')
-var session    = require('express-session')
+var passport = require('passport')
+var session = require('express-session')
 var bodyParser = require('body-parser')
 var env = require('dotenv').config()
 
@@ -22,11 +22,11 @@ var models = require("./models");
 var apiRoute = require('./routes/api-routes.js')(app);
 
 //Sync Database
-models.sequelize.sync().then(function() {
- 
+models.sequelize.sync().then(function () {
+
   console.log('Nice! Database looks fine')
 
-}).catch(function(err) {
+}).catch(function (err) {
 
   console.log(err, "Something went wrong with the Database Update!")
 
@@ -34,11 +34,11 @@ models.sequelize.sync().then(function() {
 
 
 // For Passport
- 
-app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
- 
+
+app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true })); // session secret
+
 app.use(passport.initialize());
- 
+
 app.use(passport.session()); // persistent login sessions
 
 // Sets up the Express app to handle data parsing
@@ -56,8 +56,8 @@ app.use(routes);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-models.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
+models.sequelize.sync({ force: true }).then(function () {
+  app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });
 });
