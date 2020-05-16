@@ -50,6 +50,18 @@ export default function SignUpForm() {
                     />
                 </Grid>
 
+                {/* Create Password */}
+                <Grid item xs={12} sm={6}>
+                    <TextField
+                        required
+                        id={signup.password}
+                        name="Create Password"
+                        label="Create Password"
+                        fullWidth
+                        autoComplete="Password"
+                    />
+                </Grid>
+
                 {/* email */}
                 <Grid item xs={12} sm={6}>
                     <TextField
