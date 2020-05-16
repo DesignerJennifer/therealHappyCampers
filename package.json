@@ -14,21 +14,11 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-<<<<<<< Updated upstream
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
     "authentication": "0.0.4",
-=======
->>>>>>> Stashed changes
     "bcrypt": "^4.0.1",
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
-<<<<<<< Updated upstream
     "fs": "0.0.1-security",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
     "sequelize": "^5.21.7"
   },
   "scripts": {
@@ -54,14 +44,5 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
     "sequelize": "^5.21.7"
-=======
-    "if-env": "^1.0.4",
-    "mysql2": "^2.1.0",
-    "sequelize": "^5.21.7"
-  },
-  "devDependencies": {
-    "concurrently": "^4.1.2",
-    "nodemon": "^1.18.7"
->>>>>>> Stashed changes
-  }
+}
 }

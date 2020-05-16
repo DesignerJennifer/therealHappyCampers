@@ -1,17 +1,3 @@
-<<<<<<< Updated upstream
-
-// *****************************************************************************
-// Server.js - This file is the initial starting point for the Node/Express server.
-//
-// ******************************************************************************
-// *** Dependencies
-// =============================================================
-var express = require("express");
-const routes = require("./routes");
-// Sets up the Express App
-// =============================================================
-var app = express();
-=======
 // *****************************************************************************
 // Server.js - This file is the initial starting point for the Node/Express server.
 var express = require("express");
@@ -23,7 +9,6 @@ var app = express();
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/index'))
 
->>>>>>> Stashed changes
 var PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
@@ -39,13 +24,9 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // // Routes
-<<<<<<< Updated upstream
+
 app.use(routes);
-=======
-// user
-app.use(routes);
-// app.use(routes);
->>>>>>> Stashed changes
+
 // // =============================================================
 // require("./routes/html-routes.js")(app);
 // require("./routes/author-api-routes.js")(app);
