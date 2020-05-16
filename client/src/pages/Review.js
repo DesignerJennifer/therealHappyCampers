@@ -61,11 +61,14 @@ export default function Review() {
         <React.Fragment>
             <Typography variant="h6" gutterBottom>
                 Registration Summary
+                 <p>Please review your information below.</p>
             </Typography>
             <List disablePadding>
                 <ListItem className={products.firstName}> </ListItem>
                 <ListItem className={products.lastName}> </ListItem>
             </List>
+
+
 
         </React.Fragment>
 
