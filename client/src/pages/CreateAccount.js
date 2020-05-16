@@ -13,6 +13,7 @@ import SignUpForm from './SignUpForm';
 import CamperRegForm from './CamperRegForm';
 import Review from './Review';
 import Copyright from '../components/Copyright'
+import { Grid } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -111,9 +112,17 @@ export default function Checkout() {
                                     Thank you for Registering.
                 </Typography>
                                 <Typography variant="subtitle1">
-                                    Your order number is #2001539. We have emailed your order confirmation, and will
-                                    send you an update when your order has shipped.
+                                    We are thrilled that you have chosen to send your camper to us this summer! The camper dashboard can be accessed below.
                 </Typography>
+                                <div>
+                                    <Grid container>
+                                        <Grid item>
+                                            <Button href="dashboard" fullWidth variant="contained" color="primary" className={classes.submit}>
+                                                Camper Dasboard
+                                    </Button>
+                                        </Grid>
+                                    </Grid>
+                                </div>
                             </React.Fragment>
                         ) : (
                                 <React.Fragment>
@@ -130,7 +139,7 @@ export default function Checkout() {
                                             onClick={handleNext}
                                             className={classes.button}
                                         >
-                                            {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
+                                            {activeStep === steps.length - 1 ? 'Complete Registration' : 'Next'}
                                         </Button>
                                     </div>
                                 </React.Fragment>

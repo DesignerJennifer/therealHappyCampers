@@ -1,55 +1,70 @@
-module.exports = function(sequelize, Sequelize) {
- 
+module.exports = function (sequelize, Sequelize) {
+
     var User = sequelize.define('user', {
- 
+
         id: {
             autoIncrement: true,
             primaryKey: true,
-            type: Sequelize.INTEGER
+            type: Sequelize.INTEGER,
+            allowNull: false
         },
- 
-        firstname: {
+
+        firstName: {
             type: Sequelize.STRING,
-            notEmpty: true
+            allowNull: false
         },
- 
-        lastname: {
+
+        lastName: {
             type: Sequelize.STRING,
-            notEmpty: true
+            allowNull: false
         },
- 
-        username: {
-            type: Sequelize.TEXT
+
+        userName: {
+            type: Sequelize.TEXT,
+            allowNull: false
         },
- 
-        about: {
-            type: Sequelize.TEXT
-        },
- 
-        email: {
-            type: Sequelize.STRING,
-            validate: {
-                isEmail: true
-            }
-        },
- 
+
         password: {
             type: Sequelize.STRING,
             allowNull: false
         },
- 
-        last_login: {
-            type: Sequelize.DATE
+
+        email: {
+            type: Sequelize.STRING,
+            validate: {
+                isEmail: true
+            },
+            allowNull: false
         },
- 
-        status: {
-            type: Sequelize.ENUM('active', 'inactive'),
-            defaultValue: 'active'
+
+        phoneNumber: {
+            type: Sequelize.INTEGER,
+            allowNull: false
+        },
+
+        address: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+
+        city: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+
+        state: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+
+        zip: {
+            type: Sequelize.INTEGER,
+            allowNull: false
         }
- 
- 
+
+
     });
- 
+
     return User;
- 
+
 }
