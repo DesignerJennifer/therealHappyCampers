@@ -4,46 +4,39 @@ const db = require('../config/connection')
 
 // sequelize (lowercase) references our connection to the DB.
 module.exports = function (sequelize, DataTypes) {
-    var campers = sequelize.define('campers', 
-    {
-        firstname: {
-            type: DataTypes.STRING,
-        },
-        lastname: {
-            type: DataTypes.STRING,
-        },
-        email: {
-            type: DataTypes.STRING,
-        },
-        phonenumber:{
-            type: DataTypes.INTEGER
-        },
-
-        camperfirstname: {
-            type: DataTypes.STRING,
-        },
-        camperlastname: {
-            type: DataTypes.STRING,
-        },
-        nickname: {
-            type: DataTypes.STRING,
-        },
-        birthday: {
-           type: DataTypes.INTEGER
-        },
-        grade: {
-            type: DataTypes.INTEGER
-        },
-        shirtsize: {
-            type: DataTypes.STRING,
-        },
-        allergies: {
-            type: DataTypes.STRING,
-        },
-        dieteryneeds: {
-            type: DataTypes.STRING,
-        },
-    }
+    var campers = sequelize.define('campers',
+        {
+            camperFirstName: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            camperLastName: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            nickname: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            birthday: {
+                type: DataTypes.INTEGER,
+                allowNull: false
+            },
+            grade: {
+                type: DataTypes.INTEGER,
+                allowNull: false
+            },
+            shritsize: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            allergies: {
+                type: DataTypes.STRING,
+            },
+            dieteryneeds: {
+                type: DataTypes.STRING,
+            },
+        }
     )
     return campers;
 }

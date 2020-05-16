@@ -8,19 +8,37 @@ import DropDown from "../components/DropDown/DropDown";
 export default function CamperRegForm() {
     return (
         <React.Fragment>
+            {/* Camper Registration Stage */}
             <Typography variant="h6" gutterBottom>
                 Camper Information
-      </Typography>
+            </Typography>
             <Grid container spacing={3}>
+
+                {/* Camper first name */}
                 <Grid item xs={12} md={6}>
-                    <TextField required id={registration.camperFirstName} label="Camper's First Name" fullWidth />
+                    <TextField required id={registration.camperFirstName}
+                        label="Camper's First Name" fullWidth />
                 </Grid>
+
+                {/* Camper Last name */}
                 <Grid item xs={12} md={6}>
-                    <TextField required id={registration.camperLastName} label="Camper's Last Name" fullWidth />
+                    <TextField required
+                        id={registration.camperLastName}
+                        label="Camper's Last Name" fullWidth />
                 </Grid>
+
+                {/* Camper Preferred Name */}
                 <Grid item xs={12} md={6}>
-                    <TextField required id={registration.nickname} label="Camper's Preferred Name" fullWidth />
+                    <TextField
+                        required id={registration.nickname}
+                        label="Camper's Preferred Name" fullWidth
+                        helperText="Name your camper would like go by at camp."
+                    />
+
+
                 </Grid>
+
+                {/* Camper Birthdate */}
                 <Grid item xs={12} md={6}>
                     <TextField
                         required
@@ -30,6 +48,8 @@ export default function CamperRegForm() {
                         fullWidth
                     />
                 </Grid>
+
+                {/* Camper's Current Grade */}
                 <Grid item xs={12} md={6}>
                     <TextField
                         required
@@ -40,12 +60,17 @@ export default function CamperRegForm() {
                     />
                 </Grid>
 
-                <DropDown
-                    id={registration.shritsize}
-                    label="Required"
-                    defaultValue="Medium"
-                    helperText="Camper's Tshirt Size. Youth and adult sizes available"
-                />
+                {/* Camper's shirt Size */}
+                <Grid item xs={12} md={6}>
+                    <DropDown
+                        id={registration.shritsize}
+                        label="Required"
+                        defaultValue="Medium"
+                        helperText="Camper's Tshirt Size. Youth and adult sizes available"
+                    />
+                </Grid>
+
+                {/* Camper allergies */}
                 <Grid item xs={12} md={6}>
                     <TextField
                         id={registration.allergies}
@@ -54,6 +79,8 @@ export default function CamperRegForm() {
                         fullWidth
                     />
                 </Grid>
+
+                {/* Camper Dietary Needs */}
                 <Grid item xs={12} md={6}>
                     <TextField
                         id={registration.dieteryneeds}
