@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function SignIn() {
+ function SignIn() {
     const classes = useStyles();
 
     return (
@@ -114,3 +114,5 @@ function Copyright() {
         </Typography>
     );
 }
+
+export default SignIn;
