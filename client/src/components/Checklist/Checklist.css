@@ -1,0 +1,7 @@
+.MuiSwitch-colorSecondary.Mui-checked {
+  color: #002f6c !important;
+}
+
+.MuiSwitch-colorSecondary.Mui-checked + .MuiSwitch-track {
+  background-color: #002f6c !important;
+}

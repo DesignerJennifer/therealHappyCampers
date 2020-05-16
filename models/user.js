@@ -1,22 +1,31 @@
+<<<<<<< HEAD
 module.exports = function(sequelize, Sequelize) {
  
     var User = sequelize.define('Users', {
  
+=======
+module.exports = function (sequelize, Sequelize) {
+
+    var User = sequelize.define('user', {
+
+>>>>>>> 77c9b85e07a06e22f76f8f9ade0fc8bd7d4d2eb8
         id: {
             autoIncrement: true,
             primaryKey: true,
-            type: Sequelize.INTEGER
+            type: Sequelize.INTEGER,
+            allowNull: false
         },
- 
-        firstname: {
+
+        firstName: {
             type: Sequelize.STRING,
-            notEmpty: true
+            allowNull: false
         },
- 
-        lastname: {
+
+        lastName: {
             type: Sequelize.STRING,
-            notEmpty: true
+            allowNull: false
         },
+<<<<<<< HEAD
  
         username: {
             type: Sequelize.STRING,
@@ -24,32 +33,55 @@ module.exports = function(sequelize, Sequelize) {
  
         about: {
             type: Sequelize.STRING,
+=======
+
+        userName: {
+            type: Sequelize.TEXT,
+            allowNull: false
         },
- 
+
+        password: {
+            type: Sequelize.STRING,
+            allowNull: false
+>>>>>>> 77c9b85e07a06e22f76f8f9ade0fc8bd7d4d2eb8
+        },
+
         email: {
             type: Sequelize.STRING,
             validate: {
                 isEmail: true
-            }
+            },
+            allowNull: false
         },
- 
-        password: {
+
+        phoneNumber: {
+            type: Sequelize.INTEGER,
+            allowNull: false
+        },
+
+        address: {
             type: Sequelize.STRING,
             allowNull: false
         },
- 
-        last_login: {
-            type: Sequelize.DATE
+
+        city: {
+            type: Sequelize.STRING,
+            allowNull: false
         },
- 
-        status: {
-            type: Sequelize.ENUM('active', 'inactive'),
-            defaultValue: 'active'
+
+        state: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+
+        zip: {
+            type: Sequelize.INTEGER,
+            allowNull: false
         }
- 
- 
+
+
     });
- 
+
     return User;
- 
+
 }
