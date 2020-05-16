@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 module.exports = function(sequelize, Sequelize) {
  
     var User = sequelize.define('Users', {
  
-=======
-module.exports = function (sequelize, Sequelize) {
-
-    var User = sequelize.define('user', {
-
->>>>>>> 77c9b85e07a06e22f76f8f9ade0fc8bd7d4d2eb8
         id: {
             autoIncrement: true,
             primaryKey: true,
@@ -25,7 +18,6 @@ module.exports = function (sequelize, Sequelize) {
             type: Sequelize.STRING,
             allowNull: false
         },
-<<<<<<< HEAD
  
         username: {
             type: Sequelize.STRING,
@@ -33,17 +25,6 @@ module.exports = function (sequelize, Sequelize) {
  
         about: {
             type: Sequelize.STRING,
-=======
-
-        userName: {
-            type: Sequelize.TEXT,
-            allowNull: false
-        },
-
-        password: {
-            type: Sequelize.STRING,
-            allowNull: false
->>>>>>> 77c9b85e07a06e22f76f8f9ade0fc8bd7d4d2eb8
         },
 
         email: {

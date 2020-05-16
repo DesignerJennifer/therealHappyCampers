@@ -4,7 +4,6 @@ const db = require('../config/connection')
 
 // sequelize (lowercase) references our connection to the DB.
 module.exports = function (sequelize, DataTypes) {
-<<<<<<< HEAD
     var campers = sequelize.define('campers', 
     {
 
@@ -33,41 +32,6 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.BOOLEAN,
         },
     }
-=======
-    var campers = sequelize.define('campers',
-        {
-            camperFirstName: {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
-            camperLastName: {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
-            nickname: {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
-            birthday: {
-                type: DataTypes.INTEGER,
-                allowNull: false
-            },
-            grade: {
-                type: DataTypes.INTEGER,
-                allowNull: false
-            },
-            shritsize: {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
-            allergies: {
-                type: DataTypes.STRING,
-            },
-            dieteryneeds: {
-                type: DataTypes.STRING,
-            },
-        }
->>>>>>> 77c9b85e07a06e22f76f8f9ade0fc8bd7d4d2eb8
     )
     return campers;
 }
