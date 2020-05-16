@@ -1,4 +1,3 @@
-
 var express = require("express");
 //database 
 const routes = require("./routes/api-routes");
@@ -51,8 +50,13 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // // Routes
-// user
+
 app.use(routes);
+
+// // =============================================================
+// require("./routes/html-routes.js")(app);
+// require("./routes/author-api-routes.js")(app);
+// require("./routes/post-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
