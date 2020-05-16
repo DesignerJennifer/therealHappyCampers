@@ -7,12 +7,14 @@ import CamperRegForm from './pages/CamperRegForm';
 import CreateAccount from './pages/CreateAccount';
 import './App.css';
 import Dashboard from './pages/dashboard';
+import main from './pages/main';
 
 function App() {
   return (
     <Router>
       <div>
-        <Route exact path="/" component={Login} />
+        <Route exact path="/" component={main} />
+        <Route exact path="/Login" component={Login} />
         <Route exact path="/registration" component={Registration} />
         <Route exact path="/SignUpForm" component={SignUpForm} />
         <Route exact path="/CamperRegForm" component={CamperRegForm} />
