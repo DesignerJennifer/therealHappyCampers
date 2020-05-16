@@ -12,6 +12,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import CQKC_Logo_wBorder_250x250 from "../images/CQKC_Logo_wBorder_250x250.png"
 import Copyright from "../components/Copyright";
+import signup from "../Utils/signup.json"
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -54,7 +55,7 @@ export default function SignIn() {
                     <TextField
                         variant="outlined"
                         margin="normal"
-                        required fullWidth id="email"
+                        required fullWidth id={signup.email}
                         label="Email Address"
                         name="email"
                         autoComplete="email"
@@ -67,7 +68,7 @@ export default function SignIn() {
                         required fullWidth name="password"
                         label="Password"
                         type="password"
-                        id="password"
+                        id={signup.password}
                         autoComplete="current-password"
                     />
 

@@ -22,7 +22,7 @@ export default function SignUpForm() {
                         name="firstName"
                         label="First name"
                         fullWidth
-                        autoComplete="fname"
+                        autoComplete="First Name"
                     />
                 </Grid>
 
@@ -43,63 +43,74 @@ export default function SignUpForm() {
                     <TextField
                         required
                         id={signup.userName}
-                        name="lastName"
-                        label="Last name"
+                        name="username"
+                        label="Username"
                         fullWidth
                         autoComplete="lname"
                     />
                 </Grid>
 
                 {/* email */}
-                <TextField
-                    required
-                    id="email"
-                    name={signup.email}
-                    label="email"
-                    fullWidth
-                    autoComplete="email"
-                />
-
+                <Grid item xs={12} sm={6}>
+                    <TextField
+                        required
+                        id={signup.email}
+                        name="email"
+                        label="email"
+                        fullWidth
+                        autoComplete="email"
+                    />
+                </Grid>
 
                 {/* phone number */}
                 <Grid item xs={12} sm={6}>
                     <TextField
                         required
-                        id="phoneNumber"
-                        name={signup.phoneNumber}
+                        id={signup.phoneNumber}
+                        name="phoneNumber"
                         label="Phone Number"
                         fullWidth
                         autoComplete="Phone Number"
                     />
                 </Grid>
 
+                {/* street address */}
                 <Grid item xs={12}>
                     <TextField
-                        id="address"
-                        name={signup.address}
+                        id={signup.address}
+                        name="address"
                         label="Address"
                         fullWidth
                         autoComplete="Address"
                     />
                 </Grid>
+
+                {/* City */}
                 <Grid item xs={12} sm={6}>
                     <TextField
                         required
-                        id="city"
-                        name={signup.city}
+                        id={signup.city}
+                        name="city"
                         label="City"
                         fullWidth
                         autoComplete="City"
                     />
                 </Grid>
+
+                {/* State */}
                 <Grid item xs={12} sm={6}>
-                    <TextField id="state" name="state" label="State/Province/Region" fullWidth />
+                    <TextField id={signup.state}
+                        name="state"
+                        label="State/Province/Region"
+                        fullWidth />
                 </Grid>
+
+                {/* zip */}
                 <Grid item xs={12} sm={6}>
                     <TextField
                         required
-                        id="zip"
-                        name={signup.zip}
+                        id={signup.zip}
+                        name="zip"
                         label="Zip / Postal code"
                         fullWidth
                         autoComplete="billing postal-code"
