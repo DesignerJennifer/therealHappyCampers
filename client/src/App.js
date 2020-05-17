@@ -7,22 +7,48 @@ import CamperRegForm from './pages/CamperRegForm';
 import CreateAccount from './pages/CreateAccount';
 import './App.css';
 import Dashboard from './pages/dashboard';
-import main from './pages/main';
-
+import Main from './pages/main';
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={main} />
-        <Route path="/Login" component={Login} />
-        <Route path="/registration" component={Registration} />
-        <Route path="/SignUpForm" component={SignUpForm} />
-        <Route path="/CamperRegForm" component={CamperRegForm} />
-        <Route path="/CreateAccount" component={CreateAccount} /> 
-        <Route path="/dashboard" component={Dashboard} />
+        <Route exact path="/">
+          <Main />
+        </Route>
+        <Route path="/Login">
+          <Login />
+        </Route>
+        <Route path="/registration">
+          <Registration />
+        </Route>
+        <Route path="/SignUpForm">
+          <SignUpForm />
+        </Route>
+        <Route path="/CamperRegForm">
+          <CamperRegForm />
+        </Route>
+        <Route path="/CreateAccount">
+          <CreateAccount />
+        </Route> 
+        <Route path="/dashboard">
+          <Dashboard />
+        </Route>
       </Switch>
     </Router>
-  )
+  );
 }
-
+// import React from "react";
+// import { BrowserRouter as Router, Route } from "react-router-dom";
+// import Login from "./pages/Login";
+// import Registration from "./pages/Registration";
+// function App() {
+//   return (
+//     <Router>
+//       <div>
+//         <Route exact path="/" component={Login} />
+//         <Route exact path="/registration" component={Registration} />
+//       </div>
+//     </Router>
+//   );
+// }
 export default App;
