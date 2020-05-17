@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from './pages/Login';
 import Registration from './pages/Registration';
 import SignUpForm from './pages/SignUpForm';
@@ -12,17 +12,17 @@ import main from './pages/main';
 function App() {
   return (
     <Router>
-      <div>
+      <Switch>
         <Route exact path="/" component={main} />
-        <Route exact path="/Login" component={Login} />
-        <Route exact path="/registration" component={Registration} />
-        <Route exact path="/SignUpForm" component={SignUpForm} />
-        <Route exact path="/CamperRegForm" component={CamperRegForm} />
-        <Route exact path="/CreateAccount" component={CreateAccount} /> */}
-        <Route exact path="/dashboard" component={Dashboard} />
-      </div>
+        <Route path="/Login" component={Login} />
+        <Route path="/registration" component={Registration} />
+        <Route path="/SignUpForm" component={SignUpForm} />
+        <Route path="/CamperRegForm" component={CamperRegForm} />
+        <Route path="/CreateAccount" component={CreateAccount} /> 
+        <Route path="/dashboard" component={Dashboard} />
+      </Switch>
     </Router>
-  );
+  )
 }
 
 export default App;
