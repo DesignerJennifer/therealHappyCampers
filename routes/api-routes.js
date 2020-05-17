@@ -17,25 +17,17 @@ module.exports = function() {
     })
 
   }
-    // db.User.update(data, where)
-    //   .then(function () {
-    //     res.redirect('/api/user')
-    //   })
-    //   .catch(function (err) {
-    //     console.error(JSON.stringify(err), data, where)
-    //     console.trace()
-    //     res.status(401).json(err)
-    //   })
+    
 
 
-  app.get('/api/user', isAuthenticated, function (req, res) {
-    res.json({
-      email: req.user.email,
-      firstName: req.user.firstName,
-      lastName: req.user.lastName,
-      id: req.user.id
-    })
-  })
+  // app.get('/api/user', isAuthenticated, function (req, res) {
+  //   res.json({
+  //     email: req.user.email,
+  //     firstName: req.user.firstName,
+  //     lastName: req.user.lastName,
+  //     id: req.user.id
+  //   })
+  // })
 
   // app.post('/api/Login', passport.authenticate('local'), function (req, res) {
   //   // Sending back a password, even a hashed password, isn't a good idea
@@ -67,27 +59,36 @@ module.exports = function() {
   // })
 
   // Route for logging user out
-  app.get('/logout', function (req, res) {
-    req.logout()
-    res.redirect('/')
-  })
+  // app.get('/logout', function (req, res) {
+  //   req.logout()
+  //   res.redirect('/')
+  // })
 
-  // Route for getting some data about our user to be used client side
-  app.get('/api/user_data', isAuthenticated, function (req, res) {
-    db.User.findAll({
-      where: {
-        id: req.user.id
-      }
-    }).then(data => {
-      res.json(data[0])
-    })
-  })
+  // // Route for getting some data about our user to be used client side
+  // app.get('/api/user_data', isAuthenticated, function (req, res) {
+  //   db.User.findAll({
+  //     where: {
+  //       id: req.user.id
+  //     }
+  //   }).then(data => {
+  //     res.json(data[0])
+  //   })
+  // })
 
   // app.get('/api/signup', authController.signup);
 
   return router
 
 
+  // db.User.update(data, where)
+    //   .then(function () {
+    //     res.redirect('/api/user')
+    //   })
+    //   .catch(function (err) {
+    //     console.error(JSON.stringify(err), data, where)
+    //     console.trace()
+    //     res.status(401).json(err)
+    //   })
 
 
 

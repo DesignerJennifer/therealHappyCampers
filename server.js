@@ -6,8 +6,8 @@ const routes = require("./routes/api-routes");
 var app = express();
 var passport = require('passport')
 var session = require('express-session')
-var bodyParser = require('body-parser')
-var env = require('dotenv').config()
+// var bodyParser = require('body-parser')
+// var env = require('dotenv').config()
 
 // app.use('/', require('./routes/index'));
 // app.use('/users', require('./routes/index'))
@@ -48,15 +48,10 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
-// // Routes
+// Routes
 
 app.use(routes);
 
-// // =============================================================
-// require("./routes/html-routes.js")(app);
-// require("./routes/author-api-routes.js")(app);
-// require("./routes/post-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
