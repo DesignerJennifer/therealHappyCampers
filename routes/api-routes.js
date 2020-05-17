@@ -19,16 +19,16 @@ module.exports = function() {
   }
     db.User.update(data, where)
       .then(function () {
-        res.redirect('/api/members')
+        res.redirect('/api/user')
       })
       .catch(function (err) {
         console.error(JSON.stringify(err), data, where)
         console.trace()
         res.status(401).json(err)
       })
-  }
 
-  app.get('/api/members', isAuthenticated, function (req, res) {
+
+  app.get('/api/user', isAuthenticated, function (req, res) {
     res.json({
       email: req.user.email,
       firstName: req.user.firstName,
@@ -37,7 +37,7 @@ module.exports = function() {
     })
   })
 
-  app.post('/api/login', passport.authenticate('local'), function (req, res) {
+  app.post('/api/Login', passport.authenticate('local'), function (req, res) {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.user.email,
