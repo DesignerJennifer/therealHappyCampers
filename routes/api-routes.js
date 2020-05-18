@@ -1,14 +1,8 @@
-
-
 var db = require("../models");
 var passport = require("../config/passport");
 
 module.exports = function (app) {
-  
-  
-  
-  
-  
+
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -25,12 +19,12 @@ module.exports = function (app) {
     console.log(req.body)
     db.User.create(req.body)
       .then(function (data) {
-            res.json(data)  
-       // res.redirect(307, "/api/login");
+        res.json(data)
+        // res.redirect(307, "/api/login");
       })
-     .catch(function (err) {
+      .catch(function (err) {
         res.status(401).json(err);
-      }); 
+      });
   });
 
   // Route for logging user out
@@ -130,7 +124,7 @@ module.exports = function (app) {
 //           res.json(dbPost);
 //         });
 //     });
-  
+
 //     // PUT route for updating posts
 //     app.put("/api/posts", function(req, res) {
 //       db.Post.update(req.body,
