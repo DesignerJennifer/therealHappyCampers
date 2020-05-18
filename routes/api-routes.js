@@ -71,7 +71,7 @@ module.exports = function (app) {
 // // =============================================================
 // module.exports = function(app) {
 
-//   // Get all users
+  // Get all users
 //   app.get("/api/all", function(req, res) {
 //     // Finding all Chirps, and then returning them to the user as JSON.
 //     User.findAll({})
@@ -82,17 +82,17 @@ module.exports = function (app) {
 
 //   });
 
-// // // Get route for returning posts of a specific user
-// // app.get("/api/campers/fullname/:fullname", function(req, res) {
-// //   User.Userinfo.findAll({
-// //     where: {
-// //       firstname: req.params.firstname
-// //     }
-// //   })
-// //     .then(function(dbPost) {
-// //       res.json(dbPost);
-// //     });
-// // });
+// // Get route for returning posts of a specific user
+// app.get("/api/campers/fullname/:fullname", function(req, res) {
+//   User.Userinfo.findAll({
+//     where: {
+//       firstname: req.params.firstname
+//     }
+//   })
+//     .then(function(dbPost) {
+//       res.json(dbPost);
+//     });
+// });
 
 
 //  // Get route for retrieving a single user
@@ -106,8 +106,6 @@ module.exports = function (app) {
 //       res.json(dbUser);
 //     });
 // });
-
-
 
 //   // Add a user
 //   app.post("/api/new", function(req, res) {
@@ -149,5 +147,3 @@ module.exports = function (app) {
 //           res.json(dbPost);
 //         });
 //     });
-
-// };
