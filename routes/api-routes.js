@@ -17,6 +17,7 @@ module.exports = function (app) {
     console.log(req.body)
     db.User.create(req.body)
       .then(function (data) {
+        console.log(data);
         res.json(data)
         // res.redirect(307, "/api/login");
       })
@@ -30,7 +31,7 @@ module.exports = function (app) {
     db.Camper.create(req.body)
       .then(function (data) {
         res.json(data)
-        // res.redirect(307, "/api/login");
+        res.redirect(307, "/api/login");
       })
       .catch(function (err) {
         res.status(401).json(err);
