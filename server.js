@@ -3,11 +3,6 @@ var express = require("express");
 var app = express();
 var passport = require("./config/passport");
 var session = require('express-session')
-<<<<<<< HEAD
-// var bodyParser = require('body-parser')
-// var env = require('dotenv').config()
-=======
->>>>>>> master
 
 // app.use('/', require('./routes/index'));
 // app.use('/users', require('./routes/index'))
@@ -32,13 +27,6 @@ var apiRoute = require('./routes/api-routes.js')(app);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-<<<<<<< HEAD
-// Routes
-
-app.use(routes);
-
-=======
->>>>>>> master
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
