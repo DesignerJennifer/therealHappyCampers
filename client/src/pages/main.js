@@ -7,8 +7,9 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Grid } from '@material-ui/core';
-import CQKC_Logo_wBorder_250x250 from "../images/CQKC_Logo_wBorder_250x250.png"
-
+import CQKC_Logo_wBorder_250x250 from '../images/CQKC_Logo_wBorder_250x250.png';
+import styles from './main.module.css';
+import blob from '../images/blob.png';
 
 const useStyles = makeStyles(theme => ({
   '@global': {
@@ -62,6 +63,9 @@ export default function Landing() {
 
   return (
     <React.Fragment>
+      <div>
+        <img className={styles.background} src={blob} alt="background img" />
+      </div>
       <CssBaseline />
       <AppBar
         position="static"
@@ -80,6 +84,7 @@ export default function Landing() {
           <Button
             href="/Login"
             color="primary"
+            className={styles.mainButton}
             variant="outlined"
             className={classes.link}>
             Login
@@ -87,6 +92,7 @@ export default function Landing() {
           <Button
             href="/CreateAccount"
             color="primary"
+            className={styles.mainButton}
             variant="outlined"
             className={classes.link}>
             Sign Up
@@ -99,11 +105,14 @@ export default function Landing() {
           variant="h2"
           align="center"
           color="textPrimary"
-          gutterBottom>
-        </Typography>
+          gutterBottom></Typography>
         <Grid>
-          <div>
-            <img className="logo_wBorder" src={CQKC_Logo_wBorder_250x250} alt="CQKC Logo" />
+          <div className={styles.mainImg}>
+            <img
+              className="logo_wBorder"
+              src={CQKC_Logo_wBorder_250x250}
+              alt="CQKC Logo"
+            />
           </div>
         </Grid>
         <Typography

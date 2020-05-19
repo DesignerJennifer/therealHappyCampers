@@ -1,0 +1,22 @@
+.logo_wBorder {
+  height: 150px;
+}
+.mainButton {
+  background-color: #002f6c;
+  color: white;
+}
+
+.mainButton:hover {
+  background-color: #abcae9;
+  border: none;
+}
+.mainImg {
+  text-align: center;
+  position: relative;
+}
+
+.background {
+  position: absolute;
+  left: 25em;
+  bottom: 5em;
+}
