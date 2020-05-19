@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+=======
+import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
+>>>>>>> master
 import Login from './pages/Login';
 import Registration from './pages/Registration';
 import SignUpForm from './pages/SignUpForm';
@@ -8,32 +12,43 @@ import CreateAccount from './pages/CreateAccount';
 import './App.css';
 import Dashboard from './pages/dashboard';
 import Main from './pages/main';
+
+
 function App() {
   return (
     <Router>
       <Switch>
+
         <Route exact path="/">
           <Main />
         </Route>
+
         <Route path="/Login">
           <Login />
         </Route>
+
         <Route path="/registration">
           <Registration />
         </Route>
+
         <Route path="/SignUpForm">
           <SignUpForm />
         </Route>
+
         <Route path="/CamperRegForm">
           <CamperRegForm />
         </Route>
+
         <Route path="/CreateAccount">
           <CreateAccount />
-        </Route> 
+        </Route>
+
         <Route path="/dashboard">
           <Dashboard />
         </Route>
+
       </Switch>
+
     </Router>
   );
 }
