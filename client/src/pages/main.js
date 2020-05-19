@@ -6,6 +6,9 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { Grid } from '@material-ui/core';
+import CQKC_Logo_wBorder_250x250 from "../images/CQKC_Logo_wBorder_250x250.png"
+
 
 const useStyles = makeStyles(theme => ({
   '@global': {
@@ -75,14 +78,14 @@ export default function Landing() {
           </Typography>
           <nav></nav>
           <Button
-            href="#"
+            href="/Login"
             color="primary"
             variant="outlined"
             className={classes.link}>
             Login
           </Button>
           <Button
-            href="#"
+            href="/CreateAccount"
             color="primary"
             variant="outlined"
             className={classes.link}>
@@ -97,8 +100,12 @@ export default function Landing() {
           align="center"
           color="textPrimary"
           gutterBottom>
-          Main Content
         </Typography>
+        <Grid>
+          <div>
+            <img className="logo_wBorder" src={CQKC_Logo_wBorder_250x250} alt="CQKC Logo" />
+          </div>
+        </Grid>
         <Typography
           variant="h5"
           align="center"

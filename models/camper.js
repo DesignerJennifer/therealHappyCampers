@@ -1,72 +1,66 @@
-var bcrypt = require("bcryptjs");
-const Sequelize = require('sequelize')
-const db = require('../config/connection')
+module.exports = function (sequelize, Sequelize) {
 
-// sequelize (lowercase) references our connection to the DB.
-module.exports = function (sequelize, DataTypes) {
-    var campers = sequelize.define('campers',
-        {
-            camperFirstName: {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
-            camperLastName: {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
-            nickname: {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
-            birthday: {
-                type: DataTypes.INTEGER,
-                allowNull: false
-            },
-            grade: {
-                type: DataTypes.INTEGER,
-                allowNull: false
-            },
-            shritsize: {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
-            allergies: {
-                type: DataTypes.STRING,
-            },
-            dieteryneeds: {
-                type: DataTypes.STRING,
-            },
+    var CamperReg = sequelize.define('Camper', {
+
+        id: {
+            type: Sequelize.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+
+        //These feilds will be same name as sign in to make a common field for table joining
+        firstName: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+        lastName: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+
+        camperFirstName: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+
+        camperLastName: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+
+        nickname: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+
+        birthday: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+
+        grade: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+
+        shirtsize: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+
+        allergies: {
+            type: Sequelize.STRING,
+            allowNull: true
+        },
+
+        dietaryNeeds: {
+            type: Sequelize.STRING,
+            allowNull: true
         }
-    )
-    return campers;
+
+
+    });
+
+    return CamperReg;
+
 }
-
-// module.exports = function(sequelize, DataTypes) {
-//     var User = sequelize.define("User", {
-//         email: {
-//             type: DataTypes.STRING,
-//             allowNull: false,
-//             unique: true,
-//             validate: {
-//                 isEmail: true
-//             }
-//         },
-//         password: {
-//             type: DataTypes.STRING,
-//             allowNull: false
-//         },
-//         saved: {
-//             type: DataTypes.TEXT,
-//             allowNull: true
-//         }
-//     });
-
-//     User.prototype.validPassword = function(password) {
-//         return bcrypt.compareSync(password, this.password);
-//     };
-
-//     User.addHook("beforeCreate", function(user) {
-//         user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
-//     });
-//     return User;
-// };
