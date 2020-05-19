@@ -1,9 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-=======
 import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
->>>>>>> master
 import Login from './pages/Login';
 import Registration from './pages/Registration';
 import SignUpForm from './pages/SignUpForm';
