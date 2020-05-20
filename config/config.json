@@ -1,33 +1,7 @@
 {
-<<<<<<< HEAD
-    "development": {
-      "username": "root",
-      "password": "300582mK!",
-      "database": "happycamps_db",
-      "host": "127.0.0.1",
-      "dialect": "mysql",
-      "operatorsAliases": false
-    },
-    "test": {
-      "username": "root",
-      "password": null,
-      "database": "database_test",
-      "host": "127.0.0.1",
-      "dialect": "mysql",
-      "operatorsAliases": false
-    },
-    "production": {
-      "username": "root",
-      "password": null,
-      "database": "database_production",
-      "host": "127.0.0.1",
-      "dialect": "mysql",
-      "operatorsAliases": false
-    }
-=======
   "development": {
     "username": "root",
-    "password": "4899",
+    "password": "300582mK!",
     "database": "happycamps_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -45,6 +19,5 @@
     "database": "s0stx1w5dcbn88hq",
     "host": "127.0.0.1",
     "dialect": "mysql"
->>>>>>> 21ab8c8c5dfe4576c7d72d1bdfa8cb3127eba078
   }
 }

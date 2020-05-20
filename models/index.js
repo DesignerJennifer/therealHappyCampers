@@ -29,6 +29,9 @@ Object.keys(db).forEach(function(modelName) {
     db.sequelize = sequelize;
     db.Sequelize = Sequelize;
 
+    db.User.hasMany(db.Camper)
+    db.Camper.belongsTo(db.User)
+
     module.exports = db;
 
 //  //   let sequelize;
