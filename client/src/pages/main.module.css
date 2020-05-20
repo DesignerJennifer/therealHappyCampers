@@ -17,6 +17,8 @@
 
 .background {
   position: absolute;
-  left: 25em;
-  bottom: 5em;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

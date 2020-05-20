@@ -9,7 +9,7 @@ import Container from '@material-ui/core/Container';
 import { Grid } from '@material-ui/core';
 import CQKC_Logo_wBorder_250x250 from '../images/CQKC_Logo_wBorder_250x250.png';
 import styles from './main.module.css';
-import blob from '../images/blob.png';
+import background from '../images/background.jpeg';
 
 const useStyles = makeStyles(theme => ({
   '@global': {
@@ -64,7 +64,11 @@ export default function Landing() {
   return (
     <React.Fragment>
       <div>
-        <img className={styles.background} src={blob} alt="background img" />
+        <img
+          className={styles.background}
+          src={background}
+          alt="background img"
+        />
       </div>
       <CssBaseline />
       <AppBar
