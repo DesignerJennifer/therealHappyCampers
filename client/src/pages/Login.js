@@ -30,8 +30,15 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     marginTop: theme.spacing(1),
   },
-  submit: {
+  submit_orange: {
     margin: theme.spacing(3, 0, 2),
+    backgroundColor: '#e57200 !important',
+    color: 'white !important',
+  },
+  submit_blue: {
+    margin: theme.spacing(3, 0, 2),
+    backgroundColor: '#002f6c !important',
+    color: 'white !important',
   },
 }));
 
@@ -85,7 +92,6 @@ export default function SignIn() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-
           <Button
             type="submit"
             fullWidth
@@ -103,9 +109,11 @@ export default function SignIn() {
           </Button>
 
           <Grid container>
-            {/* <Grid item xs>
-                            <Link href="#" variant="body2">Forgot password?</Link>
-                        </Grid> */}
+            <Grid item xs>
+              <Link href="#" variant="body2">
+                Forgot password?
+              </Link>
+            </Grid>
             <Grid item>
               {/* <Link href="CreateAccount" variant="body2">Don't have an account? Sign Up</Link> */}
             </Grid>
