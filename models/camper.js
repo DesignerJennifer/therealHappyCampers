@@ -8,8 +8,6 @@ module.exports = function (sequelize, Sequelize) {
             autoIncrement: true
         },
 
-        //These feilds will be same name as sign in to make a common field for table joining
-
         camperFirstName: {
             type: Sequelize.STRING,
             allowNull: false
@@ -17,14 +15,6 @@ module.exports = function (sequelize, Sequelize) {
 
         camperLastName: {
             type: Sequelize.STRING,
-            allowNull: false
-        },
-
-        email: {
-            type: Sequelize.STRING,
-            validate: {
-                isEmail: true
-            },
             allowNull: false
         },
 
