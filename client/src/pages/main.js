@@ -82,24 +82,14 @@ export default function Landing() {
             color="inherit"
             noWrap
             className={classes.toolbarTitle}>
-            Camp Quest
+            <span className={styles.headerTitle}>Camp Quest</span>
           </Typography>
           <nav></nav>
-          <Button
-            href="/Login"
-            color="primary"
-            className={styles.mainButton}
-            variant="outlined"
-            className={classes.link}>
-            Login
+          <Button href="/Login" className={classes.link}>
+            <span className={styles.mainButton}>Login</span>
           </Button>
-          <Button
-            href="/CreateAccount"
-            color="primary"
-            className={styles.mainButton}
-            variant="outlined"
-            className={classes.link}>
-            Sign Up
+          <Button href="/CreateAccount" className={classes.link}>
+            <span className={styles.mainButton}>Sign Up</span>
           </Button>
         </Toolbar>
       </AppBar>
@@ -111,9 +101,9 @@ export default function Landing() {
           color="textPrimary"
           gutterBottom></Typography>
         <Grid>
-          <div className={styles.mainImg}>
+          <div className={styles.mainImgContainer}>
             <img
-              className="logo_wBorder"
+              className={styles.mainImg}
               src={CQKC_Logo_wBorder_250x250}
               alt="CQKC Logo"
             />
@@ -123,8 +113,10 @@ export default function Landing() {
           variant="h5"
           align="center"
           color="textSecondary"
+          className={styles.mainDescription}
           component="p">
-          description
+          Camp Quest Kansas City is an educational, non-profit summer camp
+          serving children from Kansas City, and beyond!
         </Typography>
       </Container>
     </React.Fragment>

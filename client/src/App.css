@@ -57,7 +57,3 @@ html {
 .listText {
   white-space: pre-wrap;
 }
-
-.MuiStepIcon-root.MuiStepIcon-active {
-  color: #002f6c !important;
-}
