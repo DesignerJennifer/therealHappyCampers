@@ -18,9 +18,13 @@ import { Grid } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
+
     appBar: {
         position: 'relative',
+        backgroundColor: '#e57200 !important',
+        color: 'white !important',
     },
+
     layout: {
         width: 'auto',
         marginLeft: theme.spacing(2),
@@ -29,8 +33,10 @@ const useStyles = makeStyles((theme) => ({
             width: 600,
             marginLeft: 'auto',
             marginRight: 'auto',
+           
         },
     },
+    
     paper: {
         marginTop: theme.spacing(3),
         marginBottom: theme.spacing(3),
@@ -41,16 +47,30 @@ const useStyles = makeStyles((theme) => ({
             padding: theme.spacing(3),
         },
     },
+    
     stepper: {
-        padding: theme.spacing(3, 0, 5),
+        padding: theme.spacing(3, 0, 5), 
+    
     },
+
+    MuiStepIcon: {
+        color: '#e57200 !important',
+},
+   
     buttons: {
         display: 'flex',
         justifyContent: 'flex-end',
     },
-    button: {
+    button_orange: {
         marginTop: theme.spacing(3),
         marginLeft: theme.spacing(1),
+        backgroundColor: '#e57200 !important',
+        color: 'white !important',
+    },
+    button_blue: {
+        marginTop: theme.spacing(3),
+        marginLeft: theme.spacing(1),
+        color: '#002f6c !important',
     },
 }));
 
@@ -118,7 +138,7 @@ export default function Checkout() {
                                 <div>
                                     <Grid container>
                                         <Grid item>
-                                            <Button href="dashboard" fullWidth variant="contained" color="primary" className={classes.submit}>
+                                            <Button href="dashboard" fullWidth variant="contained" color="primary" className={classes.submit.button_orange}>
                                                 Camper Dasboard
                                     </Button>
                                         </Grid>
@@ -130,7 +150,7 @@ export default function Checkout() {
                                     {getStepContent(activeStep)}
                                     <div className={classes.buttons}>
                                         {activeStep !== 0 && (
-                                            <Button onClick={handleBack} className={classes.button}>
+                                            <Button onClick={handleBack} className={classes.button_blue}>
                                                 Back
                                             </Button>
                                         )}
@@ -138,7 +158,7 @@ export default function Checkout() {
                                             variant="contained"
                                             color="primary"
                                             onClick={handleNext}
-                                            className={classes.button}
+                                            className={classes.button_orange}
                                         >
                                             {activeStep === steps.length - 1 ? 'Complete Registration' : 'Next'}
                                         </Button>

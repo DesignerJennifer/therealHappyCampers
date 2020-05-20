@@ -29,9 +29,17 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     marginTop: theme.spacing(1),
   },
-  submit: {
+  submit_orange: {
     margin: theme.spacing(3, 0, 2),
+    backgroundColor: '#e57200 !important',
+    color: 'white !important',
   },
+  submit_blue: {
+    margin: theme.spacing(3, 0, 2),
+    backgroundColor: '#002f6c !important',
+    color: 'white !important',
+  },
+
 }));
 
 export default function SignIn() {
@@ -75,10 +83,10 @@ export default function SignIn() {
             label="Remember me"
           />
 
-          <Button type="submit" fullWidth variant="contained" style={{ Color: "002f6c" }} className={classes.submit}>
+          <Button type="submit" fullWidth variant="contained" className={classes.submit_orange}>
             Sign In
                     </Button>
-          <Button href="CreateAccount" fullWidth variant="contained" color="primary" className={classes.submit}>
+          <Button href="CreateAccount" fullWidth variant="contained" color="primary" className={classes.submit_blue}>
             Create an Account
                             </Button>
 
