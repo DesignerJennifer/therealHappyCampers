@@ -12,143 +12,155 @@ import Typography from '@material-ui/core/Typography';
 import SignUpForm from './SignUpForm';
 import CamperRegForm from './CamperRegForm';
 import Review from './Review';
-import Copyright from '../components/Copyright'
+import Copyright from '../components/Copyright';
 import { Grid } from '@material-ui/core';
 // import axios from 'react';
+import styles from './CreateAccount.module.css';
 
-
-const useStyles = makeStyles((theme) => ({
-    appBar: {
-        position: 'relative',
+const useStyles = makeStyles(theme => ({
+  appBar: {
+    position: 'relative',
+  },
+  layout: {
+    width: 'auto',
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2),
+    [theme.breakpoints.up(600 + theme.spacing(2) * 2)]: {
+      width: 600,
+      marginLeft: 'auto',
+      marginRight: 'auto',
     },
-    layout: {
-        width: 'auto',
-        marginLeft: theme.spacing(2),
-        marginRight: theme.spacing(2),
-        [theme.breakpoints.up(600 + theme.spacing(2) * 2)]: {
-            width: 600,
-            marginLeft: 'auto',
-            marginRight: 'auto',
-        },
+  },
+  paper: {
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(3),
+    padding: theme.spacing(2),
+    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
+      marginTop: theme.spacing(6),
+      marginBottom: theme.spacing(6),
+      padding: theme.spacing(3),
     },
-    paper: {
-        marginTop: theme.spacing(3),
-        marginBottom: theme.spacing(3),
-        padding: theme.spacing(2),
-        [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
-            marginTop: theme.spacing(6),
-            marginBottom: theme.spacing(6),
-            padding: theme.spacing(3),
-        },
-    },
-    stepper: {
-        padding: theme.spacing(3, 0, 5),
-    },
-    buttons: {
-        display: 'flex',
-        justifyContent: 'flex-end',
-    },
-    button: {
-        marginTop: theme.spacing(3),
-        marginLeft: theme.spacing(1),
-    },
+  },
+  stepper: {
+    padding: theme.spacing(3, 0, 5),
+    color: '#e57200',
+  },
+  buttons: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+  },
+  button: {
+    marginTop: theme.spacing(3),
+    marginLeft: theme.spacing(1),
+  },
 }));
 
-const steps = ['Your Information', 'Camper Information', 'Review Your Information'];
+const steps = [
+  'Your Information',
+  'Camper Information',
+  'Review Your Information',
+];
 
 function getStepContent(step) {
-    switch (step) {
-        case 0:
-            return <SignUpForm />;
-        case 1:
-            return <CamperRegForm />;
-        case 2:
-            return <Review />;
-        default:
-            throw new Error('Unknown step');
-    }
+  switch (step) {
+    case 0:
+      return <SignUpForm />;
+    case 1:
+      return <CamperRegForm />;
+    case 2:
+      return <Review />;
+    default:
+      throw new Error('Unknown step');
+  }
 }
 
 export default function Checkout() {
-    const classes = useStyles();
-    const [activeStep, setActiveStep] = React.useState(0);
+  const classes = useStyles();
+  const [activeStep, setActiveStep] = React.useState(0);
 
-    const handleNext = () => {
-        setActiveStep(activeStep + 1);
-    };
+  const handleNext = () => {
+    setActiveStep(activeStep + 1);
+  };
 
-    const handleBack = () => {
-        setActiveStep(activeStep - 1);
-    };
+  const handleBack = () => {
+    setActiveStep(activeStep - 1);
+  };
 
-    return (
-        <React.Fragment>
-            <CssBaseline />
-            <AppBar position="absolute" color="default" className={classes.appBar}>
-                <Toolbar>
-                    <Typography variant="h6" color="inherit" noWrap>
-                        Camp Quest Kansas City
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <AppBar position="absolute" color="default" className={classes.appBar}>
+        <Toolbar>
+          <Typography variant="h6" color="inherit" noWrap>
+            Camp Quest Kansas City
           </Typography>
-                </Toolbar>
-            </AppBar>
-            <main className={classes.layout}>
-                <Paper className={classes.paper}>
-                    <Typography component="h1" variant="h4" align="center">
-                        Create Account
+        </Toolbar>
+      </AppBar>
+      <main className={classes.layout}>
+        <Paper className={classes.paper}>
+          <Typography component="h1" variant="h4" align="center">
+            Create Account
           </Typography>
 
-                    {/* Registration form - Gaurdian Registration */}
-                    <Stepper activeStep={activeStep} className={classes.stepper}>
-                        {steps.map((label) => (
-                            <Step key={label}>
-                                <StepLabel>{label}</StepLabel>
-                            </Step>
-                        ))}
-                    </Stepper>
+          {/* Registration form - Gaurdian Registration */}
+          <Stepper activeStep={activeStep} className={classes.stepper}>
+            {steps.map(label => (
+              <Step key={label}>
+                <StepLabel className={styles.stepper}>{label}</StepLabel>
+              </Step>
+            ))}
+          </Stepper>
 
-                    <React.Fragment>
-                        {activeStep === steps.length ? (
-                            <React.Fragment>
-                                <Typography variant="h5" gutterBottom>
-                                    Thank you for Registering.
+          <React.Fragment>
+            {activeStep === steps.length ? (
+              <React.Fragment>
+                <Typography variant="h5" gutterBottom>
+                  Thank you for Registering.
                 </Typography>
-                                <Typography variant="subtitle1">
-                                    We are thrilled that you have chosen to send your camper to us this summer! The camper dashboard can be accessed below.
+                <Typography variant="subtitle1">
+                  We are thrilled that you have chosen to send your camper to us
+                  this summer! The camper dashboard can be accessed below.
                 </Typography>
-                                <div>
-                                    <Grid container>
-                                        <Grid item>
-                                            <Button href="dashboard" fullWidth variant="contained" color="primary" className={classes.submit}>
-                                                Camper Dasboard
-                                    </Button>
-                                        </Grid>
-                                    </Grid>
-                                </div>
-                            </React.Fragment>
-                        ) : (
-                                <React.Fragment>
-                                    {getStepContent(activeStep)}
-                                    <div className={classes.buttons}>
-                                        {activeStep !== 0 && (
-                                            <Button onClick={handleBack} className={classes.button}>
-                                                Back
-                                            </Button>
-                                        )}
-                                        <Button
-                                            variant="contained"
-                                            color="primary"
-                                            onClick={handleNext}
-                                            className={classes.button}
-                                        >
-                                            {activeStep === steps.length - 1 ? 'Complete Registration' : 'Next'}
-                                        </Button>
-                                    </div>
-                                </React.Fragment>
-                            )}
-                    </React.Fragment>
-                </Paper>
-                <Copyright />
-            </main>
-        </React.Fragment>
-    );
+                <div>
+                  <Grid container>
+                    <Grid item>
+                      <Button
+                        href="dashboard"
+                        fullWidth
+                        variant="contained"
+                        color="primary"
+                        className={classes.submit}>
+                        Camper Dasboard
+                      </Button>
+                    </Grid>
+                  </Grid>
+                </div>
+              </React.Fragment>
+            ) : (
+              <React.Fragment>
+                {getStepContent(activeStep)}
+                <div className={classes.buttons}>
+                  {activeStep !== 0 && (
+                    <Button onClick={handleBack} className={classes.button}>
+                      Back
+                    </Button>
+                  )}
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleNext}
+                    className={classes.button}>
+                    {activeStep === steps.length - 1
+                      ? 'Complete Registration'
+                      : 'Next'}
+                  </Button>
+                </div>
+              </React.Fragment>
+            )}
+          </React.Fragment>
+        </Paper>
+        <Copyright />
+      </main>
+    </React.Fragment>
+  );
 }
