@@ -145,7 +145,7 @@ export default function Checkout() {
                         fullWidth
                         variant="contained"
                         color="primary"
-                        className={classes.submit.button_orange}>
+                        className={classes.submit}>
                         Camper Dasboard
                       </Button>
                     </Grid>

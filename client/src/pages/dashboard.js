@@ -25,7 +25,6 @@ import Figure from 'react-bootstrap/Figure';
 import CampProfile from '../components/CampProfile/CampProfile';
 import Forms from '../components/DashboardTable/Forms';
 import Title from '../components/DashboardTitles/Title';
-import styles from './Dashboard.module.css';
 
 const drawerWidth = 240;
 
@@ -163,15 +162,14 @@ export default function Dashboard() {
         <Figure>
           <Figure.Image
             align="center"
-            width="100px"
-            height="100px"
-            className={styles.logo}
+            width="150px"
+            height="150px"
             alt="Camper Icon"
             src={FullColorLogo}
           />
         </Figure>
         <Divider />
-        <List className={styles.schedule}>{mainListItems}</List>
+        <List>{mainListItems}</List>
         <Divider />
         <List>{secondaryListItems}</List>
       </Drawer>
