@@ -38,7 +38,15 @@ module.exports = function (app) {
       });
   });
 
-
+  app.get("/api/camperreg/:id", (req, res) => {
+    db.Camper.findAll({
+      where: {
+        id: req.params.id
+      }
+    }).then(results => {
+      res.json(results)
+    })
+  })
 
   // Route for logging user out
   app.get("/logout", function (req, res) {
@@ -52,14 +60,34 @@ module.exports = function (app) {
       // The user is not logged in, send back an empty object
       res.json({});
     } else {
+      console.log(req.user)
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
+        id: req.user.id,
+        firstName: req.user.firstName,
+        lastName: req.user.lastName,
+        userName: req.user.userName,
         email: req.user.email,
-        id: req.user.id
+        phoneNumber: req.user.phoneNumber,
+        address: req.user.address,
+        city: req.user.city,
+        state: req.user.state,
+        zip: req.user.zip
       });
     }
   });
+
+  app.get("/api/user/:id", function (req, res) {
+    db.User.findAll({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (results) {
+      res.json(results)
+    })
+  })
+
 };
 
 

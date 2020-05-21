@@ -21,11 +21,6 @@ module.exports = function (sequelize, Sequelize) {
             allowNull: true
         },
 
-        userName: {
-            type: Sequelize.STRING,
-            allowNull: true
-        },
-
         password: {
             type: Sequelize.STRING,
         },
