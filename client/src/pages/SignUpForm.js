@@ -7,19 +7,19 @@ import { useGlobalContext } from "../Utils/GlobalState.js"
 
 
 
-export default function SignUpForm() {
+export default function CamperRegForm() {
     const [state, dispatch] = useGlobalContext();
-
     const handleChange = (event) => {
         dispatch({ type: event.target.name, value: event.target.value })
+        console.log(handleChange)
 
     };
     return (
         <React.Fragment>
+
             <Typography variant="h6" gutterBottom>
                 Your Information
             </Typography>
-
             <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
 
@@ -150,5 +150,6 @@ export default function SignUpForm() {
 
             </Grid>
         </React.Fragment>
+
     );
 }
