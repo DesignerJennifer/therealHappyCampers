@@ -4,7 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-// import Link from '@material-ui/core/Link';
+import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
@@ -12,7 +12,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import CQKC_Logo_wBorder_250x250 from "../images/CQKC_Logo_wBorder_250x250.png"
 import Copyright from "../components/Copyright";
-import signup from "../Utils/signup.json"
+import signup from "../Utils/signup.json";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -41,6 +41,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
 }));
+
+
 
 export default function SignIn() {
   const classes = useStyles();
@@ -92,8 +94,8 @@ export default function SignIn() {
 
           <Grid container>
             <Grid item xs>
-                            <Link href="#" variant="body2">Forgot password?</Link>
-                        </Grid>
+              <Link href="#" variant="body2">Forgot password?</Link>
+            </Grid>
             <Grid item>
 
               {/* <Link href="CreateAccount" variant="body2">Don't have an account? Sign Up</Link> */}

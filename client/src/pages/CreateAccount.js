@@ -14,6 +14,7 @@ import CamperRegForm from './CamperRegForm';
 import Review from './Review';
 import Copyright from '../components/Copyright'
 import { Grid } from '@material-ui/core';
+import { GlobalStateProvider } from '../Utils/GlobalState'
 // import axios from 'react';
 
 
@@ -33,10 +34,10 @@ const useStyles = makeStyles((theme) => ({
             width: 600,
             marginLeft: 'auto',
             marginRight: 'auto',
-           
+
         },
     },
-    
+
     paper: {
         marginTop: theme.spacing(3),
         marginBottom: theme.spacing(3),
@@ -47,16 +48,16 @@ const useStyles = makeStyles((theme) => ({
             padding: theme.spacing(3),
         },
     },
-    
+
     stepper: {
-        padding: theme.spacing(3, 0, 5), 
-    
+        padding: theme.spacing(3, 0, 5),
+
     },
 
     MuiStepIcon: {
         color: '#e57200 !important',
-},
-   
+    },
+
     buttons: {
         display: 'flex',
         justifyContent: 'flex-end',
@@ -101,74 +102,77 @@ export default function Checkout() {
         setActiveStep(activeStep - 1);
     };
 
+
     return (
         <React.Fragment>
-            <CssBaseline />
-            <AppBar position="absolute" color="default" className={classes.appBar}>
-                <Toolbar>
-                    <Typography variant="h6" color="inherit" noWrap>
-                        Camp Quest Kansas City
+            <GlobalStateProvider>
+                <CssBaseline />
+                <AppBar position="absolute" color="default" className={classes.appBar}>
+                    <Toolbar>
+                        <Typography variant="h6" color="inherit" noWrap>
+                            Camp Quest Kansas City
           </Typography>
-                </Toolbar>
-            </AppBar>
-            <main className={classes.layout}>
-                <Paper className={classes.paper}>
-                    <Typography component="h1" variant="h4" align="center">
-                        Create Account
+                    </Toolbar>
+                </AppBar>
+                <main className={classes.layout}>
+                    <Paper className={classes.paper}>
+                        <Typography component="h1" variant="h4" align="center">
+                            Create Account
           </Typography>
 
-                    {/* Registration form - Gaurdian Registration */}
-                    <Stepper activeStep={activeStep} className={classes.stepper}>
-                        {steps.map((label) => (
-                            <Step key={label}>
-                                <StepLabel>{label}</StepLabel>
-                            </Step>
-                        ))}
-                    </Stepper>
+                        {/* Registration form - Gaurdian Registration */}
+                        <Stepper activeStep={activeStep} className={classes.stepper}>
+                            {steps.map((label) => (
+                                <Step key={label}>
+                                    <StepLabel>{label}</StepLabel>
+                                </Step>
+                            ))}
+                        </Stepper>
 
-                    <React.Fragment>
-                        {activeStep === steps.length ? (
-                            <React.Fragment>
-                                <Typography variant="h5" gutterBottom>
-                                    Thank you for Registering.
-                </Typography>
-                                <Typography variant="subtitle1">
-                                    We are thrilled that you have chosen to send your camper to us this summer! The camper dashboard can be accessed below.
-                </Typography>
-                                <div>
-                                    <Grid container>
-                                        <Grid item>
-                                            <Button href="dashboard" fullWidth variant="contained" color="primary" className={classes.submit.button_orange}>
-                                                Camper Dasboard
-                                    </Button>
-                                        </Grid>
-                                    </Grid>
-                                </div>
-                            </React.Fragment>
-                        ) : (
+                        <React.Fragment>
+                            {activeStep === steps.length ? (
                                 <React.Fragment>
-                                    {getStepContent(activeStep)}
-                                    <div className={classes.buttons}>
-                                        {activeStep !== 0 && (
-                                            <Button onClick={handleBack} className={classes.button_blue}>
-                                                Back
-                                            </Button>
-                                        )}
-                                        <Button
-                                            variant="contained"
-                                            color="primary"
-                                            onClick={handleNext}
-                                            className={classes.button_orange}
-                                        >
-                                            {activeStep === steps.length - 1 ? 'Complete Registration' : 'Next'}
-                                        </Button>
+                                    <Typography variant="h5" gutterBottom>
+                                        Thank you for Registering.
+                </Typography>
+                                    <Typography variant="subtitle1">
+                                        We are thrilled that you have chosen to send your camper to us this summer! The camper dashboard can be accessed below.
+                </Typography>
+                                    <div>
+                                        <Grid container>
+                                            <Grid item>
+                                                <Button href="dashboard" fullWidth variant="contained" color="primary" className={classes.button_orange}>
+                                                    Camper Dasboard
+                                    </Button>
+                                            </Grid>
+                                        </Grid>
                                     </div>
                                 </React.Fragment>
-                            )}
-                    </React.Fragment>
-                </Paper>
-                <Copyright />
-            </main>
+                            ) : (
+                                    <React.Fragment>
+                                        {getStepContent(activeStep)}
+                                        <div className={classes.buttons}>
+                                            {activeStep !== 0 && (
+                                                <Button onClick={handleBack} className={classes.button_blue}>
+                                                    Back
+                                                </Button>
+                                            )}
+                                            <Button
+                                                variant="contained"
+                                                color="primary"
+                                                onClick={handleNext}
+                                                className={classes.button_orange}
+                                            >
+                                                {activeStep === steps.length - 1 ? 'Complete Registration' : 'Next'}
+                                            </Button>
+                                        </div>
+                                    </React.Fragment>
+                                )}
+                        </React.Fragment>
+                    </Paper>
+                    <Copyright />
+                </main>
+            </GlobalStateProvider>
         </React.Fragment>
     );
 }

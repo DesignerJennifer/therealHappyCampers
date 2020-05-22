@@ -1,14 +1,23 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
-import registration from "../Utils/registration";
 import DropDown from "../components/DropDown/DropDown";
+import { useGlobalContext } from "../Utils/GlobalState.js"
+// import API from "../Utils/api";
+
+
+
 
 export default function CamperRegForm() {
+    const [state, dispatch] = useGlobalContext();
+    const handleChange = (event) => {
+        dispatch({ type: event.target.name, value: event.target.value })
+        console.log(handleChange)
+    };
+
     return (
         <React.Fragment>
-            {/* Camper Registration Stage */}
             <Typography variant="h6" gutterBottom>
                 Camper Information
             </Typography>
@@ -16,22 +25,43 @@ export default function CamperRegForm() {
 
                 {/* Camper first name */}
                 <Grid item xs={12} md={6}>
-                    <TextField required id={registration.camperFirstName}
-                        label="Camper's First Name" fullWidth />
+                    <TextField
+                        required
+                        id="camperFirstName"
+                        name="camperFirstName"
+                        label="Camper's First Name"
+                        onChange={handleChange}
+                        state={state.camperFirstName}
+                        fullWidth
+                        autoComplete="First Name"
+                    />
                 </Grid>
 
                 {/* Camper Last name */}
                 <Grid item xs={12} md={6}>
-                    <TextField required
-                        id={registration.camperLastName}
-                        label="Camper's Last Name" fullWidth />
+                    <TextField
+                        required
+                        id="camperLastName"
+                        name="camperLastName"
+                        label="Camper's Last Name"
+                        onChange={handleChange}
+                        state={state.camperLastName}
+                        fullWidth
+                        autoComplete="Last Name"
+                    />
                 </Grid>
 
                 {/* Camper Preferred Name */}
                 <Grid item xs={12} md={6}>
                     <TextField
-                        required id={registration.nickname}
-                        label="Camper's Preferred Name" fullWidth
+                        required
+                        id="nickname"
+                        name="nickname"
+                        label="Camper's Preferred Name"
+                        onChange={handleChange}
+                        state={state.nickname}
+                        autoComplete="Preferred Name"
+                        fullWidth
                         helperText="Name your camper would like go by at camp."
                     />
 
@@ -42,10 +72,13 @@ export default function CamperRegForm() {
                 <Grid item xs={12} md={6}>
                     <TextField
                         required
-                        id={registration.birthday}
+                        id="birthday"
+                        name="birthday"
                         label="Camper's Birthdate"
-                        helperText="MM-DD-YYYY"
+                        onChange={handleChange}
+                        state={state.birthday}
                         fullWidth
+                        autoComplete="MM-DD-YYYY"
                     />
                 </Grid>
 
@@ -53,28 +86,40 @@ export default function CamperRegForm() {
                 <Grid item xs={12} md={6}>
                     <TextField
                         required
-                        id={registration.grade}
+                        id="grade"
+                        name="grade"
                         label="Camper's Grade"
+                        onChange={handleChange}
+                        state={state.grade}
                         helperText="Grade your camper will be this fall"
                         fullWidth
+
                     />
                 </Grid>
 
                 {/* Camper's shirt Size */}
                 <Grid item xs={12} md={6}>
                     <DropDown
-                        id={registration.shritsize}
-                        label="Required"
-                        defaultValue="Medium"
+                        required
+                        id="shirtsize"
+                        name="shirtsize"
+                        label="Camper's Shirt Size"
+                        onChange={handleChange}
+                        state={state.shirtsize}
                         helperText="Camper's Tshirt Size. Youth and adult sizes available"
+                        fullWidth
                     />
                 </Grid>
 
                 {/* Camper allergies */}
                 <Grid item xs={12} md={6}>
                     <TextField
-                        id={registration.allergies}
-                        label="Any Allergies?"
+                        required
+                        id="allergies"
+                        name="allergies"
+                        label="Camper Known Allergies"
+                        onChange={handleChange}
+                        state={state.allergies}
                         helperText="List any known allergies your camper has"
                         fullWidth
                     />
@@ -83,8 +128,12 @@ export default function CamperRegForm() {
                 {/* Camper Dietary Needs */}
                 <Grid item xs={12} md={6}>
                     <TextField
-                        id={registration.dieteryneeds}
-                        label="Special Diet?"
+                        required
+                        id="dietaryneeds"
+                        name="dietaryneeds"
+                        label="Special Dietary Needs"
+                        onChange={handleChange}
+                        state={state.dietaryneeds}
                         helperText="Vegitarian, vegan, etc."
                         fullWidth
                     />
@@ -94,4 +143,3 @@ export default function CamperRegForm() {
         </React.Fragment>
     );
 }
-
