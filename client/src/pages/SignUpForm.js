@@ -2,10 +2,18 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
-import signup from "../Utils/signup.json"
+import { useGlobalContext } from "../Utils/GlobalState.js"
+
+
 
 
 export default function SignUpForm() {
+    const [state, dispatch] = useGlobalContext();
+
+    const handleChange = (event) => {
+        dispatch({ type: event.target.name, value: event.target.value })
+
+    };
     return (
         <React.Fragment>
             <Typography variant="h6" gutterBottom>
@@ -18,9 +26,11 @@ export default function SignUpForm() {
                     {/* Garudian First Name */}
                     <TextField
                         required
-                        id={signup.firstName}
+                        id="firstName"
                         name="firstName"
                         label="First name"
+                        onChange={handleChange}
+                        state={state.firstName}
                         fullWidth
                         autoComplete="First Name"
                     />
@@ -30,23 +40,13 @@ export default function SignUpForm() {
                 <Grid item xs={12} sm={6}>
                     <TextField
                         required
-                        id={signup.lastName}
+                        id="lastName"
                         name="lastName"
                         label="Last name"
+                        onChange={handleChange}
+                        state={state.lastName}
                         fullWidth
-                        autoComplete="lname"
-                    />
-                </Grid>
-
-                {/* Username */}
-                <Grid item xs={12} sm={6}>
-                    <TextField
-                        required
-                        id={signup.userName}
-                        name="username"
-                        label="Username"
-                        fullWidth
-                        autoComplete="lname"
+                        autoComplete="Last Name"
                     />
                 </Grid>
 
@@ -54,9 +54,11 @@ export default function SignUpForm() {
                 <Grid item xs={12} sm={6}>
                     <TextField
                         required
-                        id={signup.password}
-                        name="Create Password"
+                        id="password"
+                        name="password"
                         label="Create Password"
+                        onChange={handleChange}
+                        state={state.password}
                         fullWidth
                         autoComplete="Password"
                     />
@@ -66,9 +68,11 @@ export default function SignUpForm() {
                 <Grid item xs={12} sm={6}>
                     <TextField
                         required
-                        id={signup.email}
+                        id="email"
                         name="email"
                         label="email"
+                        onChange={handleChange}
+                        state={state.email}
                         fullWidth
                         autoComplete="email"
                     />
@@ -78,9 +82,11 @@ export default function SignUpForm() {
                 <Grid item xs={12} sm={6}>
                     <TextField
                         required
-                        id={signup.phoneNumber}
+                        id="phoneNumber"
                         name="phoneNumber"
                         label="Phone Number"
+                        onChange={handleChange}
+                        state={state.phoneNumber}
                         fullWidth
                         autoComplete="Phone Number"
                     />
@@ -89,10 +95,12 @@ export default function SignUpForm() {
                 {/* street address */}
                 <Grid item xs={12}>
                     <TextField
-                        id={signup.address}
+                        id="address"
                         name="address"
                         label="Address"
                         fullWidth
+                        onChange={handleChange}
+                        state={state.address}
                         autoComplete="Address"
                     />
                 </Grid>
@@ -101,30 +109,41 @@ export default function SignUpForm() {
                 <Grid item xs={12} sm={6}>
                     <TextField
                         required
-                        id={signup.city}
+                        id="city"
                         name="city"
                         label="City"
                         fullWidth
+                        onChange={handleChange}
+                        state={state.city}
                         autoComplete="City"
                     />
                 </Grid>
 
                 {/* State */}
                 <Grid item xs={12} sm={6}>
-                    <TextField id={signup.state}
+                    <TextField
+                        required
+                        id="state"
                         name="state"
                         label="State/Province/Region"
-                        fullWidth />
+                        fullWidth
+                        onChange={handleChange}
+                        state={state.state}
+                        autoComplete="State/Province/Region"
+
+                    />
                 </Grid>
 
                 {/* zip */}
                 <Grid item xs={12} sm={6}>
                     <TextField
                         required
-                        id={signup.zip}
+                        id="zip"
                         name="zip"
                         label="Zip / Postal code"
                         fullWidth
+                        onChange={handleChange}
+                        state={state.zip}
                         autoComplete="billing postal-code"
                     />
                 </Grid>
