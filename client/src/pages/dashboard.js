@@ -25,6 +25,7 @@ import Figure from 'react-bootstrap/Figure';
 import CampProfile from '../components/CampProfile/CampProfile';
 import Forms from '../components/DashboardTable/Forms';
 import Title from '../components/DashboardTitles/Title';
+// import api from '../Utils/api';
 
 const drawerWidth = 240;
 
@@ -116,6 +117,27 @@ export default function Dashboard() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  // const {
+  //   values: {
+  //     firstName,
+  //     lastName,
+  //     email,
+  //     password,
+  //     phoneNumber,
+  //     address,
+  //     city,
+  //     state,
+  //     zip,
+  //     camperFirstName,
+  //     camperLastName,
+  //     nickname,
+  //     birthday,
+  //     grade,
+  //     shirtsize,
+  //     allergies,
+  //     dieteryneeds,
+  //   },
+  // } = this.props;
 
   return (
     <div className={classes.root}>
