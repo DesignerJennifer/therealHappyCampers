@@ -1,71 +1,71 @@
-import React, { useRef } from 'react';
-import { useStoreUserContext } from "../../Utils/UserState"
-import { ADD_POST } from "../../Utils/actions";
-import API from "../../Utils/api"
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Paper from '@material-ui/core/Paper';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import SignUpForm from './SignUpForm';
-import CamperRegForm from './CamperRegForm';
-import Review from './Review';
-import Copyright from '../components/Copyright'
-import { Grid } from '@material-ui/core';
-// import axios from 'react';
+// import React, { useRef } from 'react';
+// import { useStoreUserContext } from "../../Utils/UserState"
+// import { ADD_POST } from "../../Utils/actions";
+// import API from "../../Utils/api"
+// import AppBar from '@material-ui/core/AppBar';
+// import Toolbar from '@material-ui/core/Toolbar';
+// import Paper from '@material-ui/core/Paper';
+// import Stepper from '@material-ui/core/Stepper';
+// import Step from '@material-ui/core/Step';
+// import StepLabel from '@material-ui/core/StepLabel';
+// import Button from '@material-ui/core/Button';
+// import Typography from '@material-ui/core/Typography';
+// import SignUpForm from './SignUpForm';
+// import CamperRegForm from './CamperRegForm';
+// import Review from './Review';
+// import Copyright from '../components/Copyright'
+// import { Grid } from '@material-ui/core';
+// // import axios from 'react';
 
-function CreatePostForm() {
-    const firstNameRef = useRef();
-    const lastNameRef = useRef();
-    const userNameRef = useRef();
-    const passwordRef = useRef();
-    const emailRef = useRef();
-    const phoneNumberRef = useRef();
-    const addressRef = useRef();
-    const cityRef = useRef();
-    const stateRef = useRef();
-    const zipRef = useRef();
-    const [state, dispatch] = useStoreContext();
+// function CreatePostForm() {
+//     const firstNameRef = useRef();
+//     const lastNameRef = useRef();
+//     const userNameRef = useRef();
+//     const passwordRef = useRef();
+//     const emailRef = useRef();
+//     const phoneNumberRef = useRef();
+//     const addressRef = useRef();
+//     const cityRef = useRef();
+//     const stateRef = useRef();
+//     const zipRef = useRef();
+//     const [state, dispatch] = useStoreContext();
 
-    const handleSubmit = e => {
-        e.preventDefault();
-        dispatch({ type: LOADING });
-        API.savePost({
-            firstName: firstNameRef.current.value,
-            lastName: lastNameRef.current.value,
-            userName: userNameRef.current.value,
-            password: passwordRef.current.value,
-            email: emailRef.current.value,
-            phoneNumber: phoneNumberRef.current.value,
-            adddress: addressRef.current.value,
-            city: cityRef.current.value,
-            state: stateRef.current.value,
-            zip: zipRef.current.value
-        })
-            .then(result => {
-                dispatch({
-                    type: ADD_POST,
-                    post: result.data
-                });
-            })
-            .catch(err => console.log(err));
+//     const handleSubmit = e => {
+//         e.preventDefault();
+//         dispatch({ type: LOADING });
+//         API.savePost({
+//             firstName: firstNameRef.current.value,
+//             lastName: lastNameRef.current.value,
+//             userName: userNameRef.current.value,
+//             password: passwordRef.current.value,
+//             email: emailRef.current.value,
+//             phoneNumber: phoneNumberRef.current.value,
+//             adddress: addressRef.current.value,
+//             city: cityRef.current.value,
+//             state: stateRef.current.value,
+//             zip: zipRef.current.value
+//         })
+//             .then(result => {
+//                 dispatch({
+//                     type: ADD_POST,
+//                     post: result.data
+//                 });
+//             })
+//             .catch(err => console.log(err));
 
-        firstNameRef.current.value = "";
-        lastNameRef.current.value = "";
-        userNameRef.current.value = "";
-        passwordRef.current.value = "";
-        emailRef.current.value = "";
-        phoneNumberRef.current.value = "";
-        addressRef.current.value = "";
-        cityRef.current.value = "";
-        stateRef.current.value = "";
-        zipRef.current.value = "";
-    };
+//         firstNameRef.current.value = "";
+//         lastNameRef.current.value = "";
+//         userNameRef.current.value = "";
+//         passwordRef.current.value = "";
+//         emailRef.current.value = "";
+//         phoneNumberRef.current.value = "";
+//         addressRef.current.value = "";
+//         cityRef.current.value = "";
+//         stateRef.current.value = "";
+//         zipRef.current.value = "";
+//     };
 
-}
+// }
 // return()
 // <CssBaseline />
 //     <AppBar position="absolute" color="default" className={classes.appBar}>

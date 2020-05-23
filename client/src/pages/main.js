@@ -7,8 +7,9 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Grid } from '@material-ui/core';
-import CQKC_Logo_wBorder_250x250 from "../images/CQKC_Logo_wBorder_250x250.png"
-
+import CQKC_Logo_wBorder_250x250 from '../images/CQKC_Logo_wBorder_250x250.png';
+import styles from './main.module.css';
+import background from '../images/background.jpeg';
 
 const useStyles = makeStyles(theme => ({
   '@global': {
@@ -62,6 +63,13 @@ export default function Landing() {
 
   return (
     <React.Fragment>
+      <div>
+        <img
+          className={styles.background}
+          src={background}
+          alt="background img"
+        />
+      </div>
       <CssBaseline />
       <AppBar
         position="static"
@@ -74,22 +82,14 @@ export default function Landing() {
             color="inherit"
             noWrap
             className={classes.toolbarTitle}>
-            Camp Quest
+            <span className={styles.headerTitle}>Camp Quest</span>
           </Typography>
           <nav></nav>
-          <Button
-            href="/Login"
-            color="primary"
-            variant="outlined"
-            className={classes.link}>
-            Login
+          <Button href="/Login" className={classes.link}>
+            <span className={styles.mainButton}>Login</span>
           </Button>
-          <Button
-            href="/CreateAccount"
-            color="primary"
-            variant="outlined"
-            className={classes.link}>
-            Sign Up
+          <Button href="/signup" className={classes.link}>
+            <span className={styles.mainButton}>Sign Up</span>
           </Button>
         </Toolbar>
       </AppBar>
@@ -99,19 +99,24 @@ export default function Landing() {
           variant="h2"
           align="center"
           color="textPrimary"
-          gutterBottom>
-        </Typography>
+          gutterBottom></Typography>
         <Grid>
-          <div>
-            <img className="logo_wBorder" src={CQKC_Logo_wBorder_250x250} alt="CQKC Logo" />
+          <div className={styles.mainImgContainer}>
+            <img
+              className={styles.mainImg}
+              src={CQKC_Logo_wBorder_250x250}
+              alt="CQKC Logo"
+            />
           </div>
         </Grid>
         <Typography
           variant="h5"
           align="center"
           color="textSecondary"
+          className={styles.mainDescription}
           component="p">
-          description
+          Camp Quest Kansas City is an educational, non-profit summer camp
+          serving children from Kansas City, and beyond!
         </Typography>
       </Container>
     </React.Fragment>

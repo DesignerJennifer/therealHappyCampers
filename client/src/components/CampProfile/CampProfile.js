@@ -6,6 +6,7 @@ import Figure from 'react-bootstrap/Figure';
 import download from '../../images/download.png';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
+import UploadButtons from '../UploadPhoto';
 
 const useStyles = makeStyles({
   root: {
@@ -37,6 +38,7 @@ export default function Deposits() {
               <Typography color="textSecondary">Phone number: </Typography>
               <Typography color="textSecondary">Email: </Typography>
             </Grid>
+            <UploadButtons />
             <Grid item xs={6}>
               <Typography color="textSecondary">Grade: 5th</Typography>
               <Typography color="textSecondary">Allergies:</Typography>
