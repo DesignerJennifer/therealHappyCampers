@@ -23,7 +23,7 @@ function App() {
             <Login />
           </Route>
 
-          <Route path="/api/signup">
+          <Route path="/signup">
             <SignUp />
           </Route>
 
