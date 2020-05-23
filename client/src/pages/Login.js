@@ -14,6 +14,7 @@ import CQKC_Logo_wBorder_250x250 from "../images/CQKC_Logo_wBorder_250x250.png"
 import Copyright from "../components/Copyright";
 import signup from "../Utils/signup.json";
 
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -41,8 +42,6 @@ const useStyles = makeStyles((theme) => ({
   },
 
 }));
-
-
 
 export default function SignIn() {
   const classes = useStyles();

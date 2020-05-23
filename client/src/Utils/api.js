@@ -7,14 +7,14 @@ export default {
 
     },
     camperreg: function (userdata) {
-        return axios.post("/api/camperreg", userdata)
+        return axios.post("/api/camperreg/", userdata)
     },
     getUser: function (id) {
         return axios.get("/api/user/" + id)
     },
 
     getCamper: function (id) {
-        return axios.get("/api/camperreg/" + id )
+        return axios.get("/api/camperreg/" + id)
     },
 
     getCurrentUser: function (id) {

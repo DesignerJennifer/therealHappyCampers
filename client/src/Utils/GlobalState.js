@@ -1,5 +1,5 @@
 import React, { createContext, useReducer, useContext } from "react";
-
+// import ls from "local-storage";
 
 const GlobalContext = createContext();
 const { Provider } = GlobalContext;
@@ -35,6 +35,43 @@ const reducer = (state, action) => {
             throw new Error(`Invalid action type: ${action.type}`);
     }
 };
+
+const GlobalStateProvider = ({ value = 0, ...props }) => {
+    const [state, dispatch] = useReducer(reducer, {
+        firstName: "",
+        lastName: "",
+        password: "",
+        email: "",
+        phoneNumber: "",
+        address: "",
+        city: "",
+        state: "",
+        zip: "",
+        camperFirstName: "",
+        camperLastName: "",
+        nickname: "",
+        birthday: "",
+        grade: "",
+        shirtsize: "",
+        allergies: "",
+        dietaryneeds: ""
+    });
+
+    return (
+        <Provider value={[state, dispatch]}
+            {...props} />
+    )
+}
+
+const useGlobalContext = () => {
+    return useContext(GlobalContext);
+};
+
+
+
+export { GlobalStateProvider, useGlobalContext };
+
+
 
 // case CREATE_USER:
 //     return {
@@ -74,37 +111,3 @@ const reducer = (state, action) => {
 //     default:
 //         return state;
 // }
-
-
-const GlobalStateProvider = ({ value = 0, ...props }) => {
-    const [state, dispatch] = useReducer(reducer, {
-        firstName: "",
-        lastName: "",
-        password: "",
-        email: "",
-        phoneNumber: "",
-        address: "",
-        city: "",
-        state: "",
-        zip: "",
-        camperFirstName: "",
-        camperLastName: "",
-        nickname: "",
-        birthday: "",
-        grade: "",
-        shirtsize: "",
-        allergies: "",
-        dietaryneeds: ""
-    });
-
-    return (
-        <Provider value={[state, dispatch]}
-            {...props} />
-    )
-}
-
-const useGlobalContext = () => {
-    return useContext(GlobalContext);
-};
-
-export { GlobalStateProvider, useGlobalContext };
