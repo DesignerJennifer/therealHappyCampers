@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from './pages/Login';
 // import Registration from './pages/Registration';
 import SignUp from './pages/Signup';
-import CamperRegForm from './pages/CamperRegForm';
+// import CamperRegForm from './pages/CamperRegForm';
 
 import './App.css';
 import Dashboard from './pages/dashboard';
@@ -21,18 +21,6 @@ function App() {
 
           <Route path="/Login">
             <Login />
-          </Route>
-
-          {/* <Route path="/registration">
-          <Registration />
-        </Route> */}
-
-          <Route path="/SignUpForm">
-            <SignUp />
-          </Route>
-
-          <Route path="/CamperRegForm">
-            <CamperRegForm />
           </Route>
 
           <Route path="/api/signup">

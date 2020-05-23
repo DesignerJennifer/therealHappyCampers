@@ -88,7 +88,7 @@ export default function Landing() {
           <Button href="/Login" className={classes.link}>
             <span className={styles.mainButton}>Login</span>
           </Button>
-          <Button href="/CreateAccount" className={classes.link}>
+          <Button href="/signup" className={classes.link}>
             <span className={styles.mainButton}>Sign Up</span>
           </Button>
         </Toolbar>

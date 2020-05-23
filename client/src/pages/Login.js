@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import CQKC_Logo_wBorder_250x250 from '../images/CQKC_Logo_wBorder_250x250.png';
 import Copyright from '../components/Copyright';
-import signup from '../Utils/signup.json';
 import styles from './login.module.css';
 import { Redirect } from 'react-router-dom';
 import api from '../Utils/api';
@@ -92,7 +91,6 @@ class Login extends React.Component {
                 margin="normal"
                 required
                 fullWidth
-                id={signup.email}
                 label="Email Address"
                 name="email"
                 value={this.state.email}
@@ -109,7 +107,6 @@ class Login extends React.Component {
                 name="password"
                 label="Password"
                 type="password"
-                id={signup.password}
                 value={this.state.password}
                 onChange={this.handleChange}
               />
