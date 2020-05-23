@@ -1,9 +1,9 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import TextField from '@ma terial-ui/core/TextField';
+import TextField from '@material-ui/core/TextField';
 import DropDown from "../components/DropDown/DropDown";
-import { useGlobalContext, Provider } from "../Utils/"
+import { useGlobalContext, Provider } from "../Utils/GlobalState"
 // import API from "../Utils/api";
 
 

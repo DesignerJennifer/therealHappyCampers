@@ -69,7 +69,7 @@ const useGlobalContext = () => {
 
 
 
-export { GlobalStateProvider, useGlobalContext };
+export { GlobalStateProvider, useGlobalContext, Provider };
 
 
 
