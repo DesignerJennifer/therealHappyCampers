@@ -1,0 +1,56 @@
+.logo_wBorder {
+  height: 150px;
+}
+
+header {
+  border: none !important;
+  background-color: none !important;
+  transform: none !important;
+}
+
+.headerTitle {
+  color: #002f6c;
+  font-weight: bolder;
+  /* font-variant: petite-caps; */
+  font-size: x-large;
+}
+
+.mainButton {
+  background-color: #002f6c !important;
+  color: white !important;
+  padding: 10px;
+  min-width: 7em;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.mainButton:hover {
+  background-color: #abcae9 !important;
+  border: none !important;
+}
+.mainImgContainer {
+  text-align: center;
+  position: relative;
+  margin: 1em;
+}
+.mainImg {
+  width: 300px;
+}
+
+.mainDescription {
+  position: absolute;
+  display: block;
+  width: 600px;
+  color: white !important;
+  font-size: 24px !important;
+  font-weight: bolder !important;
+  /* font-variant: petite-caps; */
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

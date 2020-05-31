@@ -16,7 +16,7 @@ import Copyright from '../components/Copyright'
 import { Grid } from '@material-ui/core';
 import { GlobalStateProvider } from '../Utils/GlobalState.js'
 // import axios from 'axios';
-import { render } from 'react-dom';
+// import { render } from 'react-dom';
 // import App from '../App.js'
 
 const useStyles = makeStyles((theme) => ({
